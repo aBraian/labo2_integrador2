@@ -11,13 +11,6 @@ namespace Entidades.Modelos
             this.nivel = nivel;
         }
 
-        public enum ENivel
-        {
-            Principiante,
-            Intermedio,
-            Avanzado
-        }
-
         public ENivel Nivel
         {
             get

@@ -11,14 +11,6 @@ namespace Entidades.Modelos
             this.posicion = posicion;
         }
 
-        public enum EPosicion
-        {
-            Arquero,
-            Defensor,
-            Mediocampista,
-            Delantero
-        }
-
         public EPosicion Posicion
         {
             get

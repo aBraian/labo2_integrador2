@@ -19,7 +19,7 @@ namespace Entidades.Modelos
             this.Nombre = nombre;
             this.Apellido = apellido; 
             this.Celular = celular;
-            this.fechaNacimiento = fechaNacimiento;
+            this.FechaNacimiento = fechaNacimiento;
             this.horario = horario;
         }
 
@@ -89,6 +89,13 @@ namespace Entidades.Modelos
             {
                 return this.fechaNacimiento;
             }
+            set
+            {
+                if (ValidarFechaNacimiento(value))
+                {
+                    this.fechaNacimiento = value;
+                }
+            }
         }
 
         public EHorario Horario
@@ -111,7 +118,11 @@ namespace Entidades.Modelos
 
         private bool ValidarDni(string cadena)
         {
-            if (cadena.Length != 8)
+            if (string.IsNullOrEmpty(cadena))
+            {
+                throw new DniException("El campo 'DNI' esta vacio o es nulo.");
+            }
+            else if (cadena.Length != 8)
             {
                 throw new DniException("No se ingreso la cantidad de caracteres esperada (8).");
             }
@@ -126,7 +137,7 @@ namespace Entidades.Modelos
         {
             int contador = 0;
             string dniFormateado = string.Empty;
-            for (int i = cadena.Length; i >= 0; i--)
+            for (int i = cadena.Length - 1; i >= 0; i--)
             {
                 contador++;
                 dniFormateado = cadena[i] + dniFormateado;
@@ -142,6 +153,10 @@ namespace Entidades.Modelos
         {
             List<char> listaError= new List<char>();
             bool flagError = false;
+            if (string.IsNullOrEmpty(cadena))
+            {
+                throw new AlfabetoException("El campo 'nombre' o 'apellido', esta vacio o es nulo.");
+            }
             foreach (char caracter in cadena)
             {
                 if (!char.IsLetter(caracter) && caracter != ' ')
@@ -159,7 +174,11 @@ namespace Entidades.Modelos
 
         private bool ValidarCelular(string cadena)
         {
-            if (cadena.Length != 10)
+            if (string.IsNullOrEmpty(cadena))
+            {
+                throw new CelularException("El campo 'celular' esta vacio o es nulo.");
+            }
+            else if (cadena.Length != 10)
             {
                 throw new CelularException("No se ingreso la cantidad de caracteres esperada (10).");
             }
@@ -170,6 +189,15 @@ namespace Entidades.Modelos
             else if (cadena[0] != '1' || cadena[1] != '5')
             {
                 throw new CelularException("No se ingreso el prefijo esperado (15).");
+            }
+            return true;
+        }
+
+        private bool ValidarFechaNacimiento(DateTime fechaNacimiento)
+        {
+            if (fechaNacimiento > DateTime.Now)
+            {
+                throw new FechaNacimientoException("Fecha fuera de rango");
             }
             return true;
         }
