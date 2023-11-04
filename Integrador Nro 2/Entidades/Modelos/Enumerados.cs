@@ -1,6 +1,6 @@
 ﻿namespace Entidades.Modelos
 {
-    public enum EHorario
+    public enum ETurno
     {
         Mañana,
         Mediodia,

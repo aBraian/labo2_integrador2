@@ -5,21 +5,17 @@ namespace Integrador_Nro_2
     public partial class FrmMenuAlta : Form
     {
         private Polideportivo polideportivo;
+        private bool flagEventoClosing = true;
 
-        public FrmMenuAlta()
+        public FrmMenuAlta(Polideportivo polideportivo)
         {
             InitializeComponent();
-            InicializarPolideportivo();
-        }
-
-        private void InicializarPolideportivo()
-        {
-            this.polideportivo = new Polideportivo(10, 10);
+            this.polideportivo = polideportivo;
         }
 
         private void InicializarHorario()
         {
-            cmbHorario.DataSource = Enum.GetValues(typeof(EHorario));
+            cmbTurno.DataSource = Enum.GetValues(typeof(ETurno));
         }
 
         private void FrmMenuAlta_Load(object sender, EventArgs e)
@@ -46,17 +42,17 @@ namespace Integrador_Nro_2
             string apellido = txtApellido.Text;
             string dni = txtDni.Text;
             string celular = txtCelular.Text;
-            EHorario horario = (EHorario)cmbHorario.SelectedItem;
+            ETurno turno = (ETurno)cmbTurno.SelectedItem;
             DateTime fechaNacimiento = dtpFechaNacimiento.Value;
             if (rbFutbol.Checked)
             {
                 EPosicion posicion = (EPosicion)cmbEspecialidad.SelectedItem;
-                return new Futbolista(dni, nombre, apellido, celular, fechaNacimiento, horario, posicion);
+                return new Futbolista(nombre, apellido, dni, celular, fechaNacimiento, turno, posicion);
             }
             else if (rbNatacion.Checked)
             {
                 ENivel nivel = (ENivel)cmbEspecialidad.SelectedItem;
-                return new Nadador(dni, nombre, apellido, celular, fechaNacimiento, horario, nivel);
+                return new Nadador(nombre, apellido, dni, celular, fechaNacimiento, turno, nivel);
             }
             return null;
         }
@@ -65,35 +61,35 @@ namespace Integrador_Nro_2
         {
             try
             {
+                epExcepciones.Clear();
                 polideportivo += DarAltaPersona();
-                foreach (Persona item in polideportivo.ListaPersonas)
-                {
-                    MessageBox.Show(item.Informacion);
-                }
-                if (MessageBox.Show("¿Desea continuar?", "Continuar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-                {
-                    this.Close();
-                }
+                MessageBox.Show("Se dio de alta correctamente", "Alta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                flagEventoClosing = false;
+                this.Close();
             }
-            catch (AlfabetoException ex)
+            catch (NombreException ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                epExcepciones.SetError(txtNombre, ex.Message);
             }
-            catch (CelularException ex)
+            catch (ApellidoException ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                epExcepciones.SetError(txtApellido, ex.Message);
             }
             catch (DniException ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                epExcepciones.SetError(txtDni, ex.Message);
+            }
+            catch (CelularException ex)
+            {
+                epExcepciones.SetError(txtCelular, ex.Message);
             }
             catch (FechaNacimientoException ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                epExcepciones.SetError(dtpFechaNacimiento, ex.Message);
             }
             catch (PolideportivoException ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                epExcepciones.SetError(gbDeporte, ex.Message);
             }
             catch (Exception)
             {
@@ -101,11 +97,20 @@ namespace Integrador_Nro_2
             }
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void btnVolver_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Seguro que quiere cancelar?", "Cancelar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("¿Seguro que quiere regresar al menu principal?", "Volver al menu", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                flagEventoClosing = false;
                 this.Close();
+            }
+        }
+
+        private void FrmMenuAlta_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (flagEventoClosing && MessageBox.Show("¿Cerrar menu alta?", "Volver al menu", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                e.Cancel = true;
             }
         }
     }

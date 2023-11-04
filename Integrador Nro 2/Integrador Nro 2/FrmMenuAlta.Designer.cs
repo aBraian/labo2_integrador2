@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenuAlta));
             lblNombre = new Label();
             lblApellido = new Label();
@@ -35,8 +36,8 @@
             lblCelular = new Label();
             lblFechaNacimiento = new Label();
             btnAlta = new Button();
-            btnCancelar = new Button();
-            lblHorario = new Label();
+            btnVolver = new Button();
+            lblTurno = new Label();
             gbDeporte = new GroupBox();
             rbNatacion = new RadioButton();
             rbFutbol = new RadioButton();
@@ -45,10 +46,12 @@
             txtApellido = new TextBox();
             txtDni = new TextBox();
             txtCelular = new TextBox();
-            cmbHorario = new ComboBox();
+            cmbTurno = new ComboBox();
             dtpFechaNacimiento = new DateTimePicker();
             cmbEspecialidad = new ComboBox();
+            epExcepciones = new ErrorProvider(components);
             gbDeporte.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)epExcepciones).BeginInit();
             SuspendLayout();
             // 
             // lblNombre
@@ -113,39 +116,47 @@
             // 
             // btnAlta
             // 
+            btnAlta.BackColor = Color.FromArgb(55, 55, 57);
+            btnAlta.FlatAppearance.BorderColor = Color.FromArgb(55, 55, 57);
+            btnAlta.FlatStyle = FlatStyle.Flat;
             btnAlta.Font = new Font("HelveticaNowText Light", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAlta.ForeColor = Color.White;
             btnAlta.Location = new Point(100, 600);
             btnAlta.Margin = new Padding(3, 4, 3, 4);
             btnAlta.Name = "btnAlta";
             btnAlta.Size = new Size(104, 36);
             btnAlta.TabIndex = 5;
             btnAlta.Text = "Aceptar";
-            btnAlta.UseVisualStyleBackColor = true;
+            btnAlta.UseVisualStyleBackColor = false;
             btnAlta.Click += btnAlta_Click;
             // 
-            // btnCancelar
+            // btnVolver
             // 
-            btnCancelar.Font = new Font("HelveticaNowText Light", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCancelar.Location = new Point(297, 600);
-            btnCancelar.Margin = new Padding(3, 4, 3, 4);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(104, 36);
-            btnCancelar.TabIndex = 6;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
-            btnCancelar.Click += btnCancelar_Click;
+            btnVolver.BackColor = Color.FromArgb(55, 55, 57);
+            btnVolver.FlatAppearance.BorderColor = Color.FromArgb(55, 55, 57);
+            btnVolver.FlatStyle = FlatStyle.Flat;
+            btnVolver.Font = new Font("HelveticaNowText Light", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            btnVolver.ForeColor = Color.White;
+            btnVolver.Location = new Point(297, 600);
+            btnVolver.Margin = new Padding(3, 4, 3, 4);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(104, 36);
+            btnVolver.TabIndex = 6;
+            btnVolver.Text = "Volver";
+            btnVolver.UseVisualStyleBackColor = false;
+            btnVolver.Click += btnVolver_Click;
             // 
-            // lblHorario
+            // lblTurno
             // 
-            lblHorario.AutoSize = true;
-            lblHorario.BackColor = Color.Transparent;
-            lblHorario.Font = new Font("HelveticaNowText Light", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lblHorario.ForeColor = Color.White;
-            lblHorario.Location = new Point(100, 400);
-            lblHorario.Name = "lblHorario";
-            lblHorario.Size = new Size(71, 25);
-            lblHorario.TabIndex = 7;
-            lblHorario.Text = "Horario";
+            lblTurno.AutoSize = true;
+            lblTurno.BackColor = Color.Transparent;
+            lblTurno.Font = new Font("HelveticaNowText Light", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTurno.ForeColor = Color.White;
+            lblTurno.Location = new Point(100, 400);
+            lblTurno.Name = "lblTurno";
+            lblTurno.Size = new Size(57, 25);
+            lblTurno.TabIndex = 7;
+            lblTurno.Text = "Turno";
             // 
             // gbDeporte
             // 
@@ -239,16 +250,16 @@
             txtCelular.Size = new Size(301, 28);
             txtCelular.TabIndex = 13;
             // 
-            // cmbHorario
+            // cmbTurno
             // 
-            cmbHorario.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbHorario.Font = new Font("HelveticaNowText Light", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            cmbHorario.FormattingEnabled = true;
-            cmbHorario.Location = new Point(100, 429);
-            cmbHorario.Margin = new Padding(3, 4, 3, 4);
-            cmbHorario.Name = "cmbHorario";
-            cmbHorario.Size = new Size(301, 33);
-            cmbHorario.TabIndex = 14;
+            cmbTurno.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbTurno.Font = new Font("HelveticaNowText Light", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            cmbTurno.FormattingEnabled = true;
+            cmbTurno.Location = new Point(100, 429);
+            cmbTurno.Margin = new Padding(3, 4, 3, 4);
+            cmbTurno.Name = "cmbTurno";
+            cmbTurno.Size = new Size(301, 33);
+            cmbTurno.TabIndex = 14;
             // 
             // dtpFechaNacimiento
             // 
@@ -273,24 +284,27 @@
             cmbEspecialidad.Size = new Size(301, 33);
             cmbEspecialidad.TabIndex = 16;
             // 
+            // epExcepciones
+            // 
+            epExcepciones.ContainerControl = this;
+            // 
             // FrmMenuAlta
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Black;
+            BackColor = Color.FromArgb(25, 25, 26);
             ClientSize = new Size(1024, 768);
-            ControlBox = false;
             Controls.Add(cmbEspecialidad);
             Controls.Add(dtpFechaNacimiento);
-            Controls.Add(cmbHorario);
+            Controls.Add(cmbTurno);
             Controls.Add(txtCelular);
             Controls.Add(txtDni);
             Controls.Add(txtApellido);
             Controls.Add(txtNombre);
             Controls.Add(lblEspecialidad);
             Controls.Add(gbDeporte);
-            Controls.Add(lblHorario);
-            Controls.Add(btnCancelar);
+            Controls.Add(lblTurno);
+            Controls.Add(btnVolver);
             Controls.Add(btnAlta);
             Controls.Add(lblFechaNacimiento);
             Controls.Add(lblCelular);
@@ -307,9 +321,11 @@
             Name = "FrmMenuAlta";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Polideportivo UTN";
+            FormClosing += FrmMenuAlta_FormClosing;
             Load += FrmMenuAlta_Load;
             gbDeporte.ResumeLayout(false);
             gbDeporte.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)epExcepciones).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -322,18 +338,19 @@
         private Label lblCelular;
         private Label lblFechaNacimiento;
         private Button btnAlta;
-        private Button btnCancelar;
-        private Label lblHorario;
+        private Button btnVolver;
+        private Label lblTurno;
         private GroupBox gbDeporte;
         private Label lblEspecialidad;
         private TextBox txtNombre;
         private TextBox txtApellido;
         private TextBox txtDni;
         private TextBox txtCelular;
-        private ComboBox cmbHorario;
+        private ComboBox cmbTurno;
         private DateTimePicker dtpFechaNacimiento;
         private ComboBox cmbEspecialidad;
         private RadioButton rbNatacion;
         private RadioButton rbFutbol;
+        private ErrorProvider epExcepciones;
     }
 }

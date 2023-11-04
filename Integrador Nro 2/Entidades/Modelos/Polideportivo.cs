@@ -29,12 +29,12 @@ namespace Entidades.Modelos
             }
         }
 
-        private int ObtenerCantidadPersonasHorario(Persona persona)
+        private int ObtenerCantidadPersonasTurno(Persona persona)
         {
             int cantidad = 0;
             foreach (Persona item in this.personas)
             {
-                if (item.Deporte == persona.Deporte && item.Horario == persona.Horario)
+                if (item.Deporte == persona.Deporte && item.Turno == persona.Turno)
                 {
                     cantidad++;
                 }
@@ -44,7 +44,7 @@ namespace Entidades.Modelos
 
         private bool AgregarFutbolista(Persona persona)
         {
-            if (ObtenerCantidadPersonasHorario(persona) >= this.capacidadFutbol)
+            if (ObtenerCantidadPersonasTurno(persona) >= this.capacidadFutbol)
             {
                 throw new PolideportivoException("Capacidad de futbol llena.");
             }
@@ -53,7 +53,7 @@ namespace Entidades.Modelos
 
         private bool AgregarNadador(Persona persona)
         {
-            if (ObtenerCantidadPersonasHorario(persona) >= this.capacidadNatacion)
+            if (ObtenerCantidadPersonasTurno(persona) >= this.capacidadNatacion)
             {
                 throw new PolideportivoException("Capacidad de natacion llena.");
             }
@@ -64,13 +64,13 @@ namespace Entidades.Modelos
         {
             if (persona is null)
             {
-                throw new PolideportivoException("Se deben completar todos los campos");
+                throw new PolideportivoException("Se debe seleccionar un deporte.");
             }
             foreach (Persona item in polideportivo.ListaPersonas)
             {
                 if (item == persona)
                 {
-                    throw new PolideportivoException("La persona ya se encuentra registrada en el horario ingresado.");
+                    throw new PolideportivoException("La persona ya se encuentra registrada en el turno ingresado.");
                 }
             }
             switch (persona.Deporte)

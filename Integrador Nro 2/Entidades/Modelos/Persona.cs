@@ -6,21 +6,65 @@ namespace Entidades.Modelos
 {
     abstract public class Persona
     {
-        protected string dni;
         protected string nombre;
         protected string apellido;
+        protected string dni;
         protected string celular;
+        protected ETurno turno;
         protected DateTime fechaNacimiento;
-        protected EHorario horario;
 
-        protected Persona(string dni, string nombre, string apellido, string celular, DateTime fechaNacimiento, EHorario horario)
+        protected Persona(string nombre, string apellido, string dni, string celular , DateTime fechaNacimiento, ETurno turno)
         {
-            this.Dni = dni;
             this.Nombre = nombre;
             this.Apellido = apellido; 
+            this.Dni = dni;
             this.Celular = celular;
             this.FechaNacimiento = fechaNacimiento;
-            this.horario = horario;
+            this.turno = turno;
+        }
+
+        public string Nombre
+        {
+            get
+            {
+                return this.nombre;
+            }
+            set
+            {
+                try
+                {
+                    if (ValidarAlfabeto(value))
+                    {
+                        this.nombre = value;
+                    }
+                }
+                catch (Exception e)
+                {
+                    throw new NombreException(e.Message);
+                }
+            }
+        }
+
+        public string Apellido
+        {
+            get
+            {
+                return this.apellido;
+            }
+            set
+            {
+                try
+                {
+                    if (ValidarAlfabeto(value))
+                    {
+                        this.apellido = value;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new ApellidoException(ex.Message);
+                }
+            }
         }
 
         public string Dni
@@ -34,36 +78,6 @@ namespace Entidades.Modelos
                 if (ValidarDni(value))
                 {
                     this.dni = DarFormatoDni(value);
-                }
-            }
-        }
-
-        public string Nombre
-        {
-            get
-            {
-                return this.nombre;
-            }
-            set
-            {
-                if (ValidarAlfabeto(value))
-                {
-                    this.nombre = value;
-                }
-            }
-        }
-
-        public string Apellido
-        {
-            get
-            {
-                return this.apellido;
-            }
-            set
-            {
-                if (ValidarAlfabeto(value))
-                {
-                    this.apellido = value;
                 }
             }
         }
@@ -98,11 +112,19 @@ namespace Entidades.Modelos
             }
         }
 
-        public EHorario Horario
+        public ETurno Turno
         {
             get
             {
-                return this.horario;
+                return this.turno;
+            }
+        }
+
+        public int Edad
+        {
+            get
+            {
+                return ObtenerEdad();
             }
         }
 
@@ -116,11 +138,34 @@ namespace Entidades.Modelos
             get;
         }
 
+        private bool ValidarAlfabeto(string cadena)
+        {
+            List<char> listaError= new List<char>();
+            bool flagError = false;
+            if (string.IsNullOrEmpty(cadena))
+            {
+                throw new Exception("El campo esta vacio o es nulo.");
+            }
+            foreach (char caracter in cadena)
+            {
+                if (!char.IsLetter(caracter) && caracter != ' ')
+                {
+                    flagError = true;
+                    listaError.Add(caracter);
+                }
+            }
+            if (flagError)
+            {
+                throw new Exception($"Se ingresaron caracteres no validos: {string.Join(',', listaError)}.");
+            }
+            return true;
+        }
+
         private bool ValidarDni(string cadena)
         {
             if (string.IsNullOrEmpty(cadena))
             {
-                throw new DniException("El campo 'DNI' esta vacio o es nulo.");
+                throw new DniException("El campo esta vacio o es nulo.");
             }
             else if (cadena.Length != 8)
             {
@@ -149,34 +194,11 @@ namespace Entidades.Modelos
             return dniFormateado;
         }
 
-        private bool ValidarAlfabeto(string cadena)
-        {
-            List<char> listaError= new List<char>();
-            bool flagError = false;
-            if (string.IsNullOrEmpty(cadena))
-            {
-                throw new AlfabetoException("El campo 'nombre' o 'apellido', esta vacio o es nulo.");
-            }
-            foreach (char caracter in cadena)
-            {
-                if (!char.IsLetter(caracter) && caracter != ' ')
-                {
-                    flagError = true;
-                    listaError.Add(caracter);
-                }
-            }
-            if (flagError)
-            {
-                throw new AlfabetoException($"Se ingresaron caracteres no validos: {string.Join(',', listaError)}.");
-            }
-            return true;
-        }
-
         private bool ValidarCelular(string cadena)
         {
             if (string.IsNullOrEmpty(cadena))
             {
-                throw new CelularException("El campo 'celular' esta vacio o es nulo.");
+                throw new CelularException("El campo esta vacio o es nulo.");
             }
             else if (cadena.Length != 10)
             {
@@ -195,11 +217,23 @@ namespace Entidades.Modelos
 
         private bool ValidarFechaNacimiento(DateTime fechaNacimiento)
         {
-            if (fechaNacimiento > DateTime.Now)
+            DateTime minimo = new DateTime(1950, 1, 1);
+            if (fechaNacimiento > DateTime.Now || fechaNacimiento < minimo)
             {
-                throw new FechaNacimientoException("Fecha fuera de rango");
+                throw new FechaNacimientoException("Fecha de nacimiento fuera de rango.");
             }
             return true;
+        }
+
+        private int ObtenerEdad()
+        {
+            DateTime fechaActual = DateTime.Now;
+            int edad = fechaActual.Year - fechaNacimiento.Year;
+            if (fechaNacimiento.Month <= fechaActual.Month && fechaNacimiento.Day < fechaActual.Day)
+            {
+                edad--;
+            }
+            return edad;
         }
 
         protected virtual string ObtenerInformacion()
@@ -210,13 +244,14 @@ namespace Entidades.Modelos
             informacion.AppendLine($"DNI: {this.dni}");
             informacion.AppendLine($"Celular: {this.celular}");
             informacion.AppendLine($"Fecha de nacimiento: {this.fechaNacimiento.ToString("dd/MMMM/yyyy")}");
-            informacion.AppendLine($"Horario: {this.horario}");
+            informacion.AppendLine($"Edad: {this.Edad}");
+            informacion.AppendLine($"Turno: {this.turno}");
             return informacion.ToString();
         }
 
         public static bool operator ==(Persona p1, Persona p2)
         {
-            return p1.dni == p2.dni && p1.horario == p2.horario;
+            return p1.dni == p2.dni && p1.turno == p2.turno;
         }
 
         public static bool operator !=(Persona p1, Persona p2)

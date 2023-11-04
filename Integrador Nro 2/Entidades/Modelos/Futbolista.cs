@@ -6,7 +6,7 @@ namespace Entidades.Modelos
     {
         private EPosicion posicion;
 
-        public Futbolista(string dni, string nombre, string apellido, string celular, DateTime fechaNacimiento, EHorario horario, EPosicion posicion) : base(dni, nombre, apellido, celular, fechaNacimiento, horario)
+        public Futbolista(string nombre, string apellido, string dni, string celular, DateTime fechaNacimiento, ETurno turno, EPosicion posicion) : base(nombre, apellido, dni, celular, fechaNacimiento, turno)
         {
             this.posicion = posicion;
         }

@@ -6,7 +6,7 @@ namespace Entidades.Modelos
     {
         private ENivel nivel;
 
-        public Nadador(string dni, string nombre, string apellido, string celular, DateTime fechaNacimiento, EHorario horario, ENivel nivel) : base(dni, nombre, apellido, celular, fechaNacimiento, horario)
+        public Nadador(string nombre, string apellido, string dni, string celular, DateTime fechaNacimiento, ETurno turno, ENivel nivel) : base(nombre, apellido, dni, celular, fechaNacimiento, turno)
         {
             this.nivel = nivel;
         }
