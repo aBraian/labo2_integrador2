@@ -5,24 +5,29 @@ namespace Integrador_Nro_2
     public partial class FrmMenuPrincipal : Form
     {
         private Polideportivo polideportivo;
+        private const int CAPACIDAD_FUTBOL = 1;
+        private const int CAPACIDAD_NATACION = 1;
 
         public FrmMenuPrincipal()
         {
             InitializeComponent();
-            InicializarPolideportivo();
+            polideportivo = new Polideportivo(CAPACIDAD_FUTBOL, CAPACIDAD_NATACION);
         }
 
-        private void InicializarPolideportivo()
+        private void btnDarAlta_Click(object sender, EventArgs e)
         {
-            this.polideportivo = new Polideportivo(10, 10);
-        }
-
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            FrmMenuAlta menuAlta = new FrmMenuAlta(this.polideportivo);
+            FrmMenuAlta menuAlta = new FrmMenuAlta(polideportivo);
             menuAlta.ShowDialog();
-            this.Show();
+        }
+
+        private void btnDarBaja_Click(object sender, EventArgs e)
+        {
+            FrmMenuBaja menuBaja;
+            do
+            {
+                menuBaja = new FrmMenuBaja(polideportivo);
+                menuBaja.ShowDialog();
+            } while (menuBaja.DialogResult == DialogResult.OK);
         }
 
         private void FrmMenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
@@ -32,5 +37,6 @@ namespace Integrador_Nro_2
                 e.Cancel = true;
             }
         }
+
     }
 }

@@ -1,42 +1,39 @@
-using Entidades.Excepciones;
+ï»¿using Entidades.Excepciones;
 using Entidades.Modelos;
+
 namespace Integrador_Nro_2
 {
     public partial class FrmMenuAlta : Form
     {
         private Polideportivo polideportivo;
-        private bool flagEventoClosing = true;
 
         public FrmMenuAlta(Polideportivo polideportivo)
         {
             InitializeComponent();
+            InicializarTurno();
             this.polideportivo = polideportivo;
         }
 
-        private void InicializarHorario()
+        private void InicializarTurno()
         {
             cmbTurno.DataSource = Enum.GetValues(typeof(ETurno));
         }
 
-        private void FrmMenuAlta_Load(object sender, EventArgs e)
+        private void CambiarDeporte()
         {
-            InicializarHorario();
-            cmbEspecialidad.Items.Add("Seleccionar deporte");
+            if (rbFutbol.Checked)
+            {
+                lblCategoria.Text = "Posicion";
+                cmbCategoria.DataSource = Enum.GetValues(typeof(EPosicion));
+            }
+            else
+            {
+                lblCategoria.Text = "Nivel";
+                cmbCategoria.DataSource = Enum.GetValues(typeof(ENivel));
+            }
         }
 
-        private void rbFutbol_MouseClick(object sender, MouseEventArgs e)
-        {
-            lblEspecialidad.Text = "Posicion";
-            cmbEspecialidad.DataSource = Enum.GetValues(typeof(EPosicion));
-        }
-
-        private void rbNatacion_MouseClick(object sender, MouseEventArgs e)
-        {
-            lblEspecialidad.Text = "Nivel";
-            cmbEspecialidad.DataSource = Enum.GetValues(typeof(ENivel));
-        }
-
-        private Persona? DarAltaPersona()
+        private Persona DarAltaPersona()
         {
             string nombre = txtNombre.Text;
             string apellido = txtApellido.Text;
@@ -46,50 +43,64 @@ namespace Integrador_Nro_2
             DateTime fechaNacimiento = dtpFechaNacimiento.Value;
             if (rbFutbol.Checked)
             {
-                EPosicion posicion = (EPosicion)cmbEspecialidad.SelectedItem;
+                EPosicion posicion = (EPosicion)cmbCategoria.SelectedItem;
                 return new Futbolista(nombre, apellido, dni, celular, fechaNacimiento, turno, posicion);
             }
-            else if (rbNatacion.Checked)
+            else
             {
-                ENivel nivel = (ENivel)cmbEspecialidad.SelectedItem;
+                ENivel nivel = (ENivel)cmbCategoria.SelectedItem;
                 return new Nadador(nombre, apellido, dni, celular, fechaNacimiento, turno, nivel);
             }
-            return null;
         }
 
-        private void btnAlta_Click(object sender, EventArgs e)
+        private void FrmMenuAlta_Load(object sender, EventArgs e)
+        {
+            rbFutbol.Checked = true;
+            dtpFechaNacimiento.Value = DateTime.Now;
+            CambiarDeporte();
+        }
+
+        private void rbFutbol_Click(object sender, EventArgs e)
+        {
+            CambiarDeporte();
+        }
+
+        private void rbNatacion_Click(object sender, EventArgs e)
+        {
+            CambiarDeporte();
+        }
+
+        private void btnDarAlta_Click(object sender, EventArgs e)
         {
             try
             {
-                epExcepciones.Clear();
+                epAlta.Clear();
                 polideportivo += DarAltaPersona();
                 MessageBox.Show("Se dio de alta correctamente", "Alta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                flagEventoClosing = false;
-                this.Close();
             }
             catch (NombreException ex)
             {
-                epExcepciones.SetError(txtNombre, ex.Message);
+                epAlta.SetError(lblNombre, ex.Message);
             }
             catch (ApellidoException ex)
             {
-                epExcepciones.SetError(txtApellido, ex.Message);
+                epAlta.SetError(lblApellido, ex.Message);
             }
             catch (DniException ex)
             {
-                epExcepciones.SetError(txtDni, ex.Message);
+                epAlta.SetError(lblDni, ex.Message);
             }
             catch (CelularException ex)
             {
-                epExcepciones.SetError(txtCelular, ex.Message);
+                epAlta.SetError(lblCelular, ex.Message);
             }
             catch (FechaNacimientoException ex)
             {
-                epExcepciones.SetError(dtpFechaNacimiento, ex.Message);
+                epAlta.SetError(lblFechaNacimiento, ex.Message);
             }
             catch (PolideportivoException ex)
             {
-                epExcepciones.SetError(gbDeporte, ex.Message);
+                epAlta.SetError(btnDarAlta, ex.Message);
             }
             catch (Exception)
             {
@@ -99,18 +110,9 @@ namespace Integrador_Nro_2
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Seguro que quiere regresar al menu principal?", "Volver al menu", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Â¿Seguro que quiere regresar al menu principal?", "Volver al menu", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                flagEventoClosing = false;
                 this.Close();
-            }
-        }
-
-        private void FrmMenuAlta_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (flagEventoClosing && MessageBox.Show("¿Cerrar menu alta?", "Volver al menu", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-            {
-                e.Cancel = true;
             }
         }
     }

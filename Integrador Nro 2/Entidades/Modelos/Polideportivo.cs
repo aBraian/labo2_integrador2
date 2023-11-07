@@ -15,7 +15,7 @@ namespace Entidades.Modelos
             this.personas = new List<Persona>();
         }
 
-        public Polideportivo(int capacidadFutbol, int capacidadNatacion) : this() 
+        public Polideportivo(int capacidadFutbol, int capacidadNatacion) : this()
         {
             this.capacidadFutbol = capacidadFutbol;
             this.capacidadNatacion = capacidadNatacion;
@@ -29,7 +29,7 @@ namespace Entidades.Modelos
             }
         }
 
-        private int ObtenerCantidadPersonasTurno(Persona persona)
+        private int ObtenerCantidadPersonasPorDeporteYTurno(Persona persona)
         {
             int cantidad = 0;
             foreach (Persona item in this.personas)
@@ -42,30 +42,26 @@ namespace Entidades.Modelos
             return cantidad;
         }
 
-        private bool AgregarFutbolista(Persona persona)
+        private bool ValidarCapacidadFutbolPorTurno(Persona persona)
         {
-            if (ObtenerCantidadPersonasTurno(persona) >= this.capacidadFutbol)
+            if (ObtenerCantidadPersonasPorDeporteYTurno(persona) >= this.capacidadFutbol)
             {
                 throw new PolideportivoException("Capacidad de futbol llena.");
             }
             return true;
         }
 
-        private bool AgregarNadador(Persona persona)
+        private bool ValidarCapacidadNatacionPorTurno(Persona persona)
         {
-            if (ObtenerCantidadPersonasTurno(persona) >= this.capacidadNatacion)
+            if (ObtenerCantidadPersonasPorDeporteYTurno(persona) >= this.capacidadNatacion)
             {
                 throw new PolideportivoException("Capacidad de natacion llena.");
             }
             return true;
         }
 
-        public static Polideportivo operator +(Polideportivo polideportivo, Persona? persona)
+        public static Polideportivo operator +(Polideportivo polideportivo, Persona persona)
         {
-            if (persona is null)
-            {
-                throw new PolideportivoException("Se debe seleccionar un deporte.");
-            }
             foreach (Persona item in polideportivo.ListaPersonas)
             {
                 if (item == persona)
@@ -76,13 +72,13 @@ namespace Entidades.Modelos
             switch (persona.Deporte)
             {
                 case "Futbol":
-                    if (polideportivo.AgregarFutbolista(persona))
+                    if (polideportivo.ValidarCapacidadFutbolPorTurno(persona))
                     {
                         polideportivo.ListaPersonas.Add(persona);
                     }
                     break;
                 case "Natacion":
-                    if (polideportivo.AgregarNadador(persona))
+                    if (polideportivo.ValidarCapacidadNatacionPorTurno(persona))
                     {
                         polideportivo.ListaPersonas.Add(persona);
                     }

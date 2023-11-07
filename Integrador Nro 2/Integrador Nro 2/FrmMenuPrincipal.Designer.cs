@@ -29,262 +29,489 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenuPrincipal));
-            flpNavegar = new FlowLayoutPanel();
-            tlpAgregar = new TableLayoutPanel();
-            btnAgregar = new Button();
-            pbAgregar = new PictureBox();
-            tlpQuitar = new TableLayoutPanel();
-            btnQuitar = new Button();
-            pbQuitar = new PictureBox();
+            tlpMenuPrincipal = new TableLayoutPanel();
+            flpContenedorBotones = new FlowLayoutPanel();
+            tlpDarAlta = new TableLayoutPanel();
+            pbDarAlta = new PictureBox();
+            btnDarAlta = new Button();
+            tlbDarBaja = new TableLayoutPanel();
+            pbDarBaja = new PictureBox();
+            btnDarBaja = new Button();
             tlpModificar = new TableLayoutPanel();
-            btnModificar = new Button();
             pbModificar = new PictureBox();
-            tlpBuscar = new TableLayoutPanel();
-            pbBuscar = new PictureBox();
-            btnBuscar = new Button();
-            tableLayoutPanel5 = new TableLayoutPanel();
-            button3 = new Button();
-            pictureBox4 = new PictureBox();
-            flpNavegar.SuspendLayout();
-            tlpAgregar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pbAgregar).BeginInit();
-            tlpQuitar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pbQuitar).BeginInit();
+            btnModificar = new Button();
+            flpAlta = new FlowLayoutPanel();
+            tlpAlta1 = new TableLayoutPanel();
+            tlpFechaNacimiento = new TableLayoutPanel();
+            lblFechaNacimiento = new Label();
+            dtpFechaNacimiento = new DateTimePicker();
+            tlpTurno = new TableLayoutPanel();
+            lblTurno = new Label();
+            cmbTurno = new ComboBox();
+            tlpCelular = new TableLayoutPanel();
+            lblCelular = new Label();
+            txtCelular = new TextBox();
+            tlpDni = new TableLayoutPanel();
+            lblDni = new Label();
+            txtDni = new TextBox();
+            tlpApellido = new TableLayoutPanel();
+            lblApellido = new Label();
+            txtApellido = new TextBox();
+            tlpNombre = new TableLayoutPanel();
+            lblNombre = new Label();
+            txtNombre = new TextBox();
+            tlpMenuPrincipal.SuspendLayout();
+            flpContenedorBotones.SuspendLayout();
+            tlpDarAlta.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbDarAlta).BeginInit();
+            tlbDarBaja.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbDarBaja).BeginInit();
             tlpModificar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbModificar).BeginInit();
-            tlpBuscar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pbBuscar).BeginInit();
-            tableLayoutPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            tlpAlta1.SuspendLayout();
+            tlpFechaNacimiento.SuspendLayout();
+            tlpTurno.SuspendLayout();
+            tlpCelular.SuspendLayout();
+            tlpDni.SuspendLayout();
+            tlpApellido.SuspendLayout();
+            tlpNombre.SuspendLayout();
             SuspendLayout();
             // 
-            // flpNavegar
+            // tlpMenuPrincipal
             // 
-            flpNavegar.BackColor = Color.FromArgb(55, 55, 57);
-            flpNavegar.BorderStyle = BorderStyle.Fixed3D;
-            flpNavegar.Controls.Add(tlpAgregar);
-            flpNavegar.Controls.Add(tlpQuitar);
-            flpNavegar.Controls.Add(tlpModificar);
-            flpNavegar.Controls.Add(tlpBuscar);
-            flpNavegar.Location = new Point(12, 12);
-            flpNavegar.Name = "flpNavegar";
-            flpNavegar.Size = new Size(300, 744);
-            flpNavegar.TabIndex = 5;
+            tlpMenuPrincipal.BackColor = Color.FromArgb(37, 40, 80);
+            tlpMenuPrincipal.ColumnCount = 2;
+            tlpMenuPrincipal.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 350F));
+            tlpMenuPrincipal.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpMenuPrincipal.Controls.Add(flpContenedorBotones, 0, 0);
+            tlpMenuPrincipal.Dock = DockStyle.Fill;
+            tlpMenuPrincipal.Location = new Point(0, 0);
+            tlpMenuPrincipal.Name = "tlpMenuPrincipal";
+            tlpMenuPrincipal.RowCount = 1;
+            tlpMenuPrincipal.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpMenuPrincipal.Size = new Size(1024, 768);
+            tlpMenuPrincipal.TabIndex = 0;
             // 
-            // tlpAgregar
+            // flpContenedorBotones
             // 
-            tlpAgregar.ColumnCount = 2;
-            tlpAgregar.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 50F));
-            tlpAgregar.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tlpAgregar.Controls.Add(btnAgregar, 1, 0);
-            tlpAgregar.Controls.Add(pbAgregar, 0, 0);
-            tlpAgregar.Location = new Point(3, 3);
-            tlpAgregar.Name = "tlpAgregar";
-            tlpAgregar.RowCount = 1;
-            tlpAgregar.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlpAgregar.Size = new Size(290, 50);
-            tlpAgregar.TabIndex = 7;
+            flpContenedorBotones.BackColor = Color.FromArgb(52, 55, 95);
+            flpContenedorBotones.BorderStyle = BorderStyle.Fixed3D;
+            flpContenedorBotones.Controls.Add(tlpDarAlta);
+            flpContenedorBotones.Controls.Add(tlbDarBaja);
+            flpContenedorBotones.Controls.Add(tlpModificar);
+            flpContenedorBotones.Dock = DockStyle.Fill;
+            flpContenedorBotones.FlowDirection = FlowDirection.TopDown;
+            flpContenedorBotones.Location = new Point(3, 3);
+            flpContenedorBotones.Name = "flpContenedorBotones";
+            flpContenedorBotones.Size = new Size(344, 762);
+            flpContenedorBotones.TabIndex = 0;
             // 
-            // btnAgregar
+            // tlpDarAlta
             // 
-            btnAgregar.BackColor = Color.FromArgb(55, 55, 57);
-            btnAgregar.Dock = DockStyle.Fill;
-            btnAgregar.FlatAppearance.BorderColor = Color.FromArgb(55, 55, 57);
-            btnAgregar.FlatAppearance.MouseOverBackColor = Color.FromArgb(25, 25, 26);
-            btnAgregar.FlatStyle = FlatStyle.Flat;
-            btnAgregar.ForeColor = Color.White;
-            btnAgregar.Location = new Point(53, 3);
-            btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(234, 44);
-            btnAgregar.TabIndex = 8;
-            btnAgregar.Text = "Agregar persona";
-            btnAgregar.TextAlign = ContentAlignment.MiddleLeft;
-            btnAgregar.UseVisualStyleBackColor = false;
-            btnAgregar.Click += btnAgregar_Click;
+            tlpDarAlta.ColumnCount = 2;
+            tlpDarAlta.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
+            tlpDarAlta.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpDarAlta.Controls.Add(pbDarAlta, 0, 0);
+            tlpDarAlta.Controls.Add(btnDarAlta, 1, 0);
+            tlpDarAlta.Location = new Point(3, 3);
+            tlpDarAlta.Name = "tlpDarAlta";
+            tlpDarAlta.RowCount = 1;
+            tlpDarAlta.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
+            tlpDarAlta.Size = new Size(340, 60);
+            tlpDarAlta.TabIndex = 1;
             // 
-            // pbAgregar
+            // pbDarAlta
             // 
-            pbAgregar.BackColor = Color.Transparent;
-            pbAgregar.BackgroundImage = (Image)resources.GetObject("pbAgregar.BackgroundImage");
-            pbAgregar.BackgroundImageLayout = ImageLayout.Zoom;
-            pbAgregar.Dock = DockStyle.Fill;
-            pbAgregar.Location = new Point(3, 3);
-            pbAgregar.Name = "pbAgregar";
-            pbAgregar.Size = new Size(44, 44);
-            pbAgregar.TabIndex = 8;
-            pbAgregar.TabStop = false;
+            pbDarAlta.BackColor = Color.Transparent;
+            pbDarAlta.Dock = DockStyle.Fill;
+            pbDarAlta.Image = (Image)resources.GetObject("pbDarAlta.Image");
+            pbDarAlta.InitialImage = null;
+            pbDarAlta.Location = new Point(3, 3);
+            pbDarAlta.Name = "pbDarAlta";
+            pbDarAlta.Size = new Size(54, 54);
+            pbDarAlta.SizeMode = PictureBoxSizeMode.Zoom;
+            pbDarAlta.TabIndex = 0;
+            pbDarAlta.TabStop = false;
             // 
-            // tlpQuitar
+            // btnDarAlta
             // 
-            tlpQuitar.ColumnCount = 2;
-            tlpQuitar.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 50F));
-            tlpQuitar.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tlpQuitar.Controls.Add(btnQuitar, 1, 0);
-            tlpQuitar.Controls.Add(pbQuitar, 0, 0);
-            tlpQuitar.Location = new Point(3, 59);
-            tlpQuitar.Name = "tlpQuitar";
-            tlpQuitar.RowCount = 1;
-            tlpQuitar.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlpQuitar.Size = new Size(290, 50);
-            tlpQuitar.TabIndex = 8;
+            btnDarAlta.Dock = DockStyle.Fill;
+            btnDarAlta.FlatAppearance.BorderSize = 0;
+            btnDarAlta.FlatAppearance.MouseDownBackColor = Color.FromArgb(41, 44, 76);
+            btnDarAlta.FlatAppearance.MouseOverBackColor = Color.FromArgb(32, 35, 85);
+            btnDarAlta.FlatStyle = FlatStyle.Flat;
+            btnDarAlta.Font = new Font("HelveticaNowText Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDarAlta.ForeColor = Color.White;
+            btnDarAlta.Location = new Point(63, 3);
+            btnDarAlta.Name = "btnDarAlta";
+            btnDarAlta.Size = new Size(274, 54);
+            btnDarAlta.TabIndex = 1;
+            btnDarAlta.Text = "Inscribir ";
+            btnDarAlta.TextAlign = ContentAlignment.MiddleLeft;
+            btnDarAlta.UseVisualStyleBackColor = true;
+            btnDarAlta.Click += btnDarAlta_Click;
             // 
-            // btnQuitar
+            // tlbDarBaja
             // 
-            btnQuitar.BackColor = Color.FromArgb(55, 55, 57);
-            btnQuitar.Dock = DockStyle.Fill;
-            btnQuitar.FlatAppearance.BorderColor = Color.FromArgb(55, 55, 57);
-            btnQuitar.FlatAppearance.MouseOverBackColor = Color.FromArgb(25, 25, 26);
-            btnQuitar.FlatStyle = FlatStyle.Flat;
-            btnQuitar.ForeColor = Color.White;
-            btnQuitar.Location = new Point(53, 3);
-            btnQuitar.Name = "btnQuitar";
-            btnQuitar.Size = new Size(234, 44);
-            btnQuitar.TabIndex = 8;
-            btnQuitar.Text = "Quitar persona";
-            btnQuitar.TextAlign = ContentAlignment.MiddleLeft;
-            btnQuitar.UseVisualStyleBackColor = false;
+            tlbDarBaja.ColumnCount = 2;
+            tlbDarBaja.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
+            tlbDarBaja.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlbDarBaja.Controls.Add(pbDarBaja, 0, 0);
+            tlbDarBaja.Controls.Add(btnDarBaja, 1, 0);
+            tlbDarBaja.Location = new Point(3, 69);
+            tlbDarBaja.Name = "tlbDarBaja";
+            tlbDarBaja.RowCount = 1;
+            tlbDarBaja.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
+            tlbDarBaja.Size = new Size(340, 60);
+            tlbDarBaja.TabIndex = 2;
             // 
-            // pbQuitar
+            // pbDarBaja
             // 
-            pbQuitar.BackColor = Color.Transparent;
-            pbQuitar.BackgroundImage = (Image)resources.GetObject("pbQuitar.BackgroundImage");
-            pbQuitar.BackgroundImageLayout = ImageLayout.Zoom;
-            pbQuitar.Dock = DockStyle.Fill;
-            pbQuitar.Location = new Point(3, 3);
-            pbQuitar.Name = "pbQuitar";
-            pbQuitar.Size = new Size(44, 44);
-            pbQuitar.TabIndex = 8;
-            pbQuitar.TabStop = false;
+            pbDarBaja.BackColor = Color.Transparent;
+            pbDarBaja.Dock = DockStyle.Fill;
+            pbDarBaja.Image = (Image)resources.GetObject("pbDarBaja.Image");
+            pbDarBaja.InitialImage = null;
+            pbDarBaja.Location = new Point(3, 3);
+            pbDarBaja.Name = "pbDarBaja";
+            pbDarBaja.Size = new Size(54, 54);
+            pbDarBaja.SizeMode = PictureBoxSizeMode.Zoom;
+            pbDarBaja.TabIndex = 0;
+            pbDarBaja.TabStop = false;
+            // 
+            // btnDarBaja
+            // 
+            btnDarBaja.Dock = DockStyle.Fill;
+            btnDarBaja.FlatAppearance.BorderSize = 0;
+            btnDarBaja.FlatAppearance.MouseDownBackColor = Color.FromArgb(41, 44, 76);
+            btnDarBaja.FlatAppearance.MouseOverBackColor = Color.FromArgb(32, 35, 85);
+            btnDarBaja.FlatStyle = FlatStyle.Flat;
+            btnDarBaja.Font = new Font("HelveticaNowText Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDarBaja.ForeColor = Color.White;
+            btnDarBaja.Location = new Point(63, 3);
+            btnDarBaja.Name = "btnDarBaja";
+            btnDarBaja.Size = new Size(274, 54);
+            btnDarBaja.TabIndex = 1;
+            btnDarBaja.Text = "Eliminar ";
+            btnDarBaja.TextAlign = ContentAlignment.MiddleLeft;
+            btnDarBaja.UseVisualStyleBackColor = true;
+            btnDarBaja.Click += btnDarBaja_Click;
             // 
             // tlpModificar
             // 
             tlpModificar.ColumnCount = 2;
-            tlpModificar.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 50F));
+            tlpModificar.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
             tlpModificar.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tlpModificar.Controls.Add(btnModificar, 1, 0);
             tlpModificar.Controls.Add(pbModificar, 0, 0);
-            tlpModificar.Location = new Point(3, 115);
+            tlpModificar.Controls.Add(btnModificar, 1, 0);
+            tlpModificar.Location = new Point(3, 135);
             tlpModificar.Name = "tlpModificar";
             tlpModificar.RowCount = 1;
-            tlpModificar.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlpModificar.Size = new Size(290, 50);
-            tlpModificar.TabIndex = 11;
-            // 
-            // btnModificar
-            // 
-            btnModificar.BackColor = Color.FromArgb(55, 55, 57);
-            btnModificar.Dock = DockStyle.Fill;
-            btnModificar.FlatAppearance.BorderColor = Color.FromArgb(55, 55, 57);
-            btnModificar.FlatAppearance.MouseOverBackColor = Color.FromArgb(25, 25, 26);
-            btnModificar.FlatStyle = FlatStyle.Flat;
-            btnModificar.ForeColor = Color.White;
-            btnModificar.Location = new Point(53, 3);
-            btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(234, 44);
-            btnModificar.TabIndex = 8;
-            btnModificar.Text = "Modificar persona";
-            btnModificar.TextAlign = ContentAlignment.MiddleLeft;
-            btnModificar.UseVisualStyleBackColor = false;
+            tlpModificar.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
+            tlpModificar.Size = new Size(340, 60);
+            tlpModificar.TabIndex = 3;
             // 
             // pbModificar
             // 
             pbModificar.BackColor = Color.Transparent;
-            pbModificar.BackgroundImage = (Image)resources.GetObject("pbModificar.BackgroundImage");
-            pbModificar.BackgroundImageLayout = ImageLayout.Zoom;
             pbModificar.Dock = DockStyle.Fill;
+            pbModificar.Image = (Image)resources.GetObject("pbModificar.Image");
+            pbModificar.InitialImage = null;
             pbModificar.Location = new Point(3, 3);
             pbModificar.Name = "pbModificar";
-            pbModificar.Size = new Size(44, 44);
-            pbModificar.TabIndex = 8;
+            pbModificar.Size = new Size(54, 54);
+            pbModificar.SizeMode = PictureBoxSizeMode.Zoom;
+            pbModificar.TabIndex = 0;
             pbModificar.TabStop = false;
             // 
-            // tlpBuscar
+            // btnModificar
             // 
-            tlpBuscar.BackColor = Color.Transparent;
-            tlpBuscar.ColumnCount = 2;
-            tlpBuscar.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 50F));
-            tlpBuscar.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tlpBuscar.Controls.Add(pbBuscar, 0, 0);
-            tlpBuscar.Controls.Add(btnBuscar, 1, 0);
-            tlpBuscar.Location = new Point(3, 171);
-            tlpBuscar.Name = "tlpBuscar";
-            tlpBuscar.RowCount = 1;
-            tlpBuscar.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlpBuscar.Size = new Size(290, 50);
-            tlpBuscar.TabIndex = 10;
+            btnModificar.Dock = DockStyle.Fill;
+            btnModificar.FlatAppearance.BorderSize = 0;
+            btnModificar.FlatAppearance.MouseDownBackColor = Color.FromArgb(41, 44, 76);
+            btnModificar.FlatAppearance.MouseOverBackColor = Color.FromArgb(32, 35, 85);
+            btnModificar.FlatStyle = FlatStyle.Flat;
+            btnModificar.Font = new Font("HelveticaNowText Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnModificar.ForeColor = Color.White;
+            btnModificar.Location = new Point(63, 3);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new Size(274, 54);
+            btnModificar.TabIndex = 1;
+            btnModificar.Text = "Modificar Información";
+            btnModificar.TextAlign = ContentAlignment.MiddleLeft;
+            btnModificar.UseVisualStyleBackColor = true;
             // 
-            // pbBuscar
+            // flpAlta
             // 
-            pbBuscar.BackColor = Color.Transparent;
-            pbBuscar.BackgroundImage = (Image)resources.GetObject("pbBuscar.BackgroundImage");
-            pbBuscar.BackgroundImageLayout = ImageLayout.Zoom;
-            pbBuscar.Dock = DockStyle.Fill;
-            pbBuscar.Location = new Point(3, 3);
-            pbBuscar.Name = "pbBuscar";
-            pbBuscar.Size = new Size(44, 44);
-            pbBuscar.TabIndex = 8;
-            pbBuscar.TabStop = false;
+            flpAlta.BackColor = Color.FromArgb(52, 55, 95);
+            flpAlta.BorderStyle = BorderStyle.Fixed3D;
+            flpAlta.Location = new Point(0, 0);
+            flpAlta.Name = "flpAlta";
+            flpAlta.Size = new Size(200, 100);
+            flpAlta.TabIndex = 0;
             // 
-            // btnBuscar
+            // tlpAlta1
             // 
-            btnBuscar.BackColor = Color.FromArgb(55, 55, 57);
-            btnBuscar.FlatAppearance.BorderColor = Color.FromArgb(55, 55, 57);
-            btnBuscar.FlatAppearance.MouseOverBackColor = Color.FromArgb(25, 25, 26);
-            btnBuscar.FlatStyle = FlatStyle.Flat;
-            btnBuscar.ForeColor = Color.White;
-            btnBuscar.Location = new Point(53, 3);
-            btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(234, 44);
-            btnBuscar.TabIndex = 8;
-            btnBuscar.Text = "Buscar persona";
-            btnBuscar.TextAlign = ContentAlignment.MiddleLeft;
-            btnBuscar.UseVisualStyleBackColor = false;
+            tlpAlta1.ColumnCount = 1;
+            tlpAlta1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpAlta1.Controls.Add(tlpFechaNacimiento, 0, 5);
+            tlpAlta1.Controls.Add(tlpTurno, 0, 4);
+            tlpAlta1.Controls.Add(tlpCelular, 0, 3);
+            tlpAlta1.Controls.Add(tlpDni, 0, 2);
+            tlpAlta1.Controls.Add(tlpApellido, 0, 1);
+            tlpAlta1.Location = new Point(0, 0);
+            tlpAlta1.Name = "tlpAlta1";
+            tlpAlta1.RowCount = 6;
+            tlpAlta1.Size = new Size(200, 100);
+            tlpAlta1.TabIndex = 0;
             // 
-            // tableLayoutPanel5
+            // tlpFechaNacimiento
             // 
-            tableLayoutPanel5.ColumnCount = 2;
-            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 50F));
-            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel5.Controls.Add(button3, 1, 0);
-            tableLayoutPanel5.Location = new Point(0, 0);
-            tableLayoutPanel5.Name = "tableLayoutPanel5";
-            tableLayoutPanel5.RowCount = 1;
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel5.Size = new Size(200, 100);
-            tableLayoutPanel5.TabIndex = 0;
+            tlpFechaNacimiento.ColumnCount = 1;
+            tlpFechaNacimiento.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tlpFechaNacimiento.Controls.Add(lblFechaNacimiento, 0, 0);
+            tlpFechaNacimiento.Controls.Add(dtpFechaNacimiento, 0, 1);
+            tlpFechaNacimiento.Location = new Point(4, 503);
+            tlpFechaNacimiento.Margin = new Padding(4, 3, 4, 3);
+            tlpFechaNacimiento.Name = "tlpFechaNacimiento";
+            tlpFechaNacimiento.RowCount = 2;
+            tlpFechaNacimiento.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tlpFechaNacimiento.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tlpFechaNacimiento.Size = new Size(192, 119);
+            tlpFechaNacimiento.TabIndex = 4;
             // 
-            // button3
+            // lblFechaNacimiento
             // 
-            button3.Dock = DockStyle.Fill;
-            button3.ForeColor = Color.Black;
-            button3.Location = new Point(53, 3);
-            button3.Name = "button3";
-            button3.Size = new Size(144, 94);
-            button3.TabIndex = 8;
-            button3.Text = "Agregar persona";
-            button3.UseVisualStyleBackColor = true;
+            lblFechaNacimiento.Anchor = AnchorStyles.None;
+            lblFechaNacimiento.AutoSize = true;
+            lblFechaNacimiento.Font = new Font("HelveticaNowText Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblFechaNacimiento.ForeColor = Color.White;
+            lblFechaNacimiento.Location = new Point(38, 0);
+            lblFechaNacimiento.Margin = new Padding(4, 0, 4, 0);
+            lblFechaNacimiento.Name = "lblFechaNacimiento";
+            lblFechaNacimiento.Size = new Size(116, 58);
+            lblFechaNacimiento.TabIndex = 0;
+            lblFechaNacimiento.Text = "Fecha de nacimiento";
             // 
-            // pictureBox4
+            // dtpFechaNacimiento
             // 
-            pictureBox4.BackColor = Color.White;
-            pictureBox4.BackgroundImage = (Image)resources.GetObject("pictureBox4.BackgroundImage");
-            pictureBox4.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox4.Dock = DockStyle.Fill;
-            pictureBox4.Location = new Point(3, 3);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(44, 94);
-            pictureBox4.TabIndex = 8;
-            pictureBox4.TabStop = false;
+            dtpFechaNacimiento.Anchor = AnchorStyles.None;
+            dtpFechaNacimiento.CalendarForeColor = Color.FromArgb(55, 55, 57);
+            dtpFechaNacimiento.CalendarTitleForeColor = Color.FromArgb(55, 55, 57);
+            dtpFechaNacimiento.CustomFormat = "dd/MMM/yyyy";
+            dtpFechaNacimiento.Font = new Font("HelveticaNowText Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dtpFechaNacimiento.Format = DateTimePickerFormat.Custom;
+            dtpFechaNacimiento.Location = new Point(4, 73);
+            dtpFechaNacimiento.Margin = new Padding(4, 3, 4, 3);
+            dtpFechaNacimiento.Name = "dtpFechaNacimiento";
+            dtpFechaNacimiento.Size = new Size(184, 31);
+            dtpFechaNacimiento.TabIndex = 1;
+            // 
+            // tlpTurno
+            // 
+            tlpTurno.ColumnCount = 1;
+            tlpTurno.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tlpTurno.Controls.Add(lblTurno, 0, 0);
+            tlpTurno.Controls.Add(cmbTurno, 0, 1);
+            tlpTurno.Location = new Point(4, 378);
+            tlpTurno.Margin = new Padding(4, 3, 4, 3);
+            tlpTurno.Name = "tlpTurno";
+            tlpTurno.RowCount = 2;
+            tlpTurno.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tlpTurno.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tlpTurno.Size = new Size(192, 119);
+            tlpTurno.TabIndex = 3;
+            // 
+            // lblTurno
+            // 
+            lblTurno.Anchor = AnchorStyles.None;
+            lblTurno.AutoSize = true;
+            lblTurno.Font = new Font("HelveticaNowText Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTurno.ForeColor = Color.White;
+            lblTurno.Location = new Point(62, 15);
+            lblTurno.Margin = new Padding(4, 0, 4, 0);
+            lblTurno.Name = "lblTurno";
+            lblTurno.Size = new Size(67, 29);
+            lblTurno.TabIndex = 0;
+            lblTurno.Text = "Turno";
+            // 
+            // cmbTurno
+            // 
+            cmbTurno.Anchor = AnchorStyles.None;
+            cmbTurno.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbTurno.Font = new Font("HelveticaNowText Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            cmbTurno.ForeColor = Color.FromArgb(55, 55, 57);
+            cmbTurno.FormattingEnabled = true;
+            cmbTurno.Location = new Point(4, 70);
+            cmbTurno.Margin = new Padding(4, 3, 4, 3);
+            cmbTurno.Name = "cmbTurno";
+            cmbTurno.RightToLeft = RightToLeft.No;
+            cmbTurno.Size = new Size(184, 37);
+            cmbTurno.TabIndex = 1;
+            // 
+            // tlpCelular
+            // 
+            tlpCelular.ColumnCount = 1;
+            tlpCelular.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tlpCelular.Controls.Add(lblCelular, 0, 0);
+            tlpCelular.Controls.Add(txtCelular, 0, 1);
+            tlpCelular.Location = new Point(4, 253);
+            tlpCelular.Margin = new Padding(4, 3, 4, 3);
+            tlpCelular.Name = "tlpCelular";
+            tlpCelular.RowCount = 2;
+            tlpCelular.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tlpCelular.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tlpCelular.Size = new Size(192, 119);
+            tlpCelular.TabIndex = 3;
+            // 
+            // lblCelular
+            // 
+            lblCelular.Anchor = AnchorStyles.None;
+            lblCelular.AutoSize = true;
+            lblCelular.Font = new Font("HelveticaNowText Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblCelular.ForeColor = Color.White;
+            lblCelular.Location = new Point(56, 15);
+            lblCelular.Margin = new Padding(4, 0, 4, 0);
+            lblCelular.Name = "lblCelular";
+            lblCelular.Size = new Size(79, 29);
+            lblCelular.TabIndex = 0;
+            lblCelular.Text = "Celular";
+            // 
+            // txtCelular
+            // 
+            txtCelular.Anchor = AnchorStyles.None;
+            txtCelular.Font = new Font("HelveticaNowText Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtCelular.ForeColor = Color.FromArgb(55, 55, 57);
+            txtCelular.Location = new Point(4, 73);
+            txtCelular.Margin = new Padding(4, 3, 4, 3);
+            txtCelular.Name = "txtCelular";
+            txtCelular.PlaceholderText = "Ingresar celular";
+            txtCelular.Size = new Size(184, 31);
+            txtCelular.TabIndex = 1;
+            // 
+            // tlpDni
+            // 
+            tlpDni.ColumnCount = 1;
+            tlpDni.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tlpDni.Controls.Add(lblDni, 0, 0);
+            tlpDni.Controls.Add(txtDni, 0, 1);
+            tlpDni.Location = new Point(4, 128);
+            tlpDni.Margin = new Padding(4, 3, 4, 3);
+            tlpDni.Name = "tlpDni";
+            tlpDni.RowCount = 2;
+            tlpDni.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tlpDni.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tlpDni.Size = new Size(192, 119);
+            tlpDni.TabIndex = 3;
+            // 
+            // lblDni
+            // 
+            lblDni.Anchor = AnchorStyles.None;
+            lblDni.AutoSize = true;
+            lblDni.Font = new Font("HelveticaNowText Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblDni.ForeColor = Color.White;
+            lblDni.Location = new Point(72, 15);
+            lblDni.Margin = new Padding(4, 0, 4, 0);
+            lblDni.Name = "lblDni";
+            lblDni.Size = new Size(47, 29);
+            lblDni.TabIndex = 0;
+            lblDni.Text = "DNI";
+            // 
+            // txtDni
+            // 
+            txtDni.Anchor = AnchorStyles.None;
+            txtDni.Font = new Font("HelveticaNowText Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtDni.ForeColor = Color.FromArgb(55, 55, 57);
+            txtDni.Location = new Point(4, 73);
+            txtDni.Margin = new Padding(4, 3, 4, 3);
+            txtDni.Name = "txtDni";
+            txtDni.PlaceholderText = "Ingresar DNI";
+            txtDni.Size = new Size(184, 31);
+            txtDni.TabIndex = 1;
+            // 
+            // tlpApellido
+            // 
+            tlpApellido.ColumnCount = 1;
+            tlpApellido.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tlpApellido.Controls.Add(lblApellido, 0, 0);
+            tlpApellido.Controls.Add(txtApellido, 0, 1);
+            tlpApellido.Location = new Point(4, 3);
+            tlpApellido.Margin = new Padding(4, 3, 4, 3);
+            tlpApellido.Name = "tlpApellido";
+            tlpApellido.RowCount = 2;
+            tlpApellido.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tlpApellido.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tlpApellido.Size = new Size(192, 119);
+            tlpApellido.TabIndex = 3;
+            // 
+            // lblApellido
+            // 
+            lblApellido.Anchor = AnchorStyles.None;
+            lblApellido.AutoSize = true;
+            lblApellido.Font = new Font("HelveticaNowText Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblApellido.ForeColor = Color.White;
+            lblApellido.Location = new Point(51, 15);
+            lblApellido.Margin = new Padding(4, 0, 4, 0);
+            lblApellido.Name = "lblApellido";
+            lblApellido.Size = new Size(89, 29);
+            lblApellido.TabIndex = 0;
+            lblApellido.Text = "Apellido";
+            // 
+            // txtApellido
+            // 
+            txtApellido.Anchor = AnchorStyles.None;
+            txtApellido.Font = new Font("HelveticaNowText Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtApellido.ForeColor = Color.FromArgb(55, 55, 57);
+            txtApellido.Location = new Point(4, 73);
+            txtApellido.Margin = new Padding(4, 3, 4, 3);
+            txtApellido.Name = "txtApellido";
+            txtApellido.PlaceholderText = "Ingresar apellido";
+            txtApellido.Size = new Size(184, 31);
+            txtApellido.TabIndex = 1;
+            // 
+            // tlpNombre
+            // 
+            tlpNombre.ColumnCount = 1;
+            tlpNombre.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tlpNombre.Controls.Add(lblNombre, 0, 0);
+            tlpNombre.Location = new Point(0, 0);
+            tlpNombre.Margin = new Padding(4, 3, 4, 3);
+            tlpNombre.Name = "tlpNombre";
+            tlpNombre.RowCount = 2;
+            tlpNombre.Size = new Size(200, 100);
+            tlpNombre.TabIndex = 0;
+            // 
+            // lblNombre
+            // 
+            lblNombre.Anchor = AnchorStyles.None;
+            lblNombre.AutoSize = true;
+            lblNombre.Font = new Font("HelveticaNowText Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblNombre.ForeColor = Color.White;
+            lblNombre.Location = new Point(56, 0);
+            lblNombre.Margin = new Padding(4, 0, 4, 0);
+            lblNombre.Name = "lblNombre";
+            lblNombre.Size = new Size(87, 29);
+            lblNombre.TabIndex = 0;
+            lblNombre.Text = "Nombre";
+            // 
+            // txtNombre
+            // 
+            txtNombre.Anchor = AnchorStyles.None;
+            txtNombre.Font = new Font("HelveticaNowText Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNombre.ForeColor = Color.FromArgb(55, 55, 57);
+            txtNombre.Location = new Point(4, 49);
+            txtNombre.Margin = new Padding(4, 3, 4, 3);
+            txtNombre.Name = "txtNombre";
+            txtNombre.PlaceholderText = "Ingresar nombre";
+            txtNombre.Size = new Size(192, 31);
+            txtNombre.TabIndex = 1;
             // 
             // FrmMenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(25, 25, 26);
             ClientSize = new Size(1024, 768);
-            Controls.Add(flpNavegar);
+            Controls.Add(tlpMenuPrincipal);
             Font = new Font("HelveticaNowText Light", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            ForeColor = Color.White;
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4);
@@ -294,36 +521,62 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Polideportivo UTN";
             FormClosing += FrmMenuPrincipal_FormClosing;
-            flpNavegar.ResumeLayout(false);
-            tlpAgregar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pbAgregar).EndInit();
-            tlpQuitar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pbQuitar).EndInit();
+            tlpMenuPrincipal.ResumeLayout(false);
+            flpContenedorBotones.ResumeLayout(false);
+            tlpDarAlta.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pbDarAlta).EndInit();
+            tlbDarBaja.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pbDarBaja).EndInit();
             tlpModificar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbModificar).EndInit();
-            tlpBuscar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pbBuscar).EndInit();
-            tableLayoutPanel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            tlpAlta1.ResumeLayout(false);
+            tlpFechaNacimiento.ResumeLayout(false);
+            tlpFechaNacimiento.PerformLayout();
+            tlpTurno.ResumeLayout(false);
+            tlpTurno.PerformLayout();
+            tlpCelular.ResumeLayout(false);
+            tlpCelular.PerformLayout();
+            tlpDni.ResumeLayout(false);
+            tlpDni.PerformLayout();
+            tlpApellido.ResumeLayout(false);
+            tlpApellido.PerformLayout();
+            tlpNombre.ResumeLayout(false);
+            tlpNombre.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-        private FlowLayoutPanel flpNavegar;
-        private PictureBox pbAgregar;
-        private TableLayoutPanel tlpAgregar;
-        private Button btnAgregar;
-        private TableLayoutPanel tlpQuitar;
-        private Button btnQuitar;
-        private PictureBox pbQuitar;
+
+        private TableLayoutPanel tlpMenuPrincipal;
+        private FlowLayoutPanel flpContenedorBotones;
+        private TableLayoutPanel tlpDarAlta;
+        private PictureBox pbDarAlta;
+        private Button btnDarAlta;
+        private TableLayoutPanel tlbDarBaja;
+        private PictureBox pbDarBaja;
+        private Button btnDarBaja;
         private TableLayoutPanel tlpModificar;
-        private Button btnModificar;
         private PictureBox pbModificar;
-        private TableLayoutPanel tableLayoutPanel5;
-        private Button button3;
-        private PictureBox pictureBox4;
-        private TableLayoutPanel tlpBuscar;
-        private Button btnBuscar;
-        private PictureBox pbBuscar;
+        private Button btnModificar;
+        private FlowLayoutPanel flpAlta;
+        private TableLayoutPanel tlpAlta1;
+        private TableLayoutPanel tlpFechaNacimiento;
+        private Label lblFechaNacimiento;
+        private DateTimePicker dtpFechaNacimiento;
+        private TableLayoutPanel tlpTurno;
+        private Label lblTurno;
+        private ComboBox cmbTurno;
+        private TableLayoutPanel tlpCelular;
+        private Label lblCelular;
+        private TextBox txtCelular;
+        private TableLayoutPanel tlpDni;
+        private Label lblDni;
+        private TextBox txtDni;
+        private TableLayoutPanel tlpApellido;
+        private Label lblApellido;
+        private TextBox txtApellido;
+        private TableLayoutPanel tlpNombre;
+        private Label lblNombre;
+        private TextBox txtNombre;
     }
 }

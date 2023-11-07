@@ -38,8 +38,8 @@ namespace Entidades.Modelos
         protected override string ObtenerInformacion()
         {
             StringBuilder informacion = new StringBuilder();
-            informacion.AppendLine($"Practica: {this.Deporte}");
-            informacion.AppendLine($"Posicion: {this.posicion}");
+            informacion.AppendLine($"Practica: {Deporte}");
+            informacion.AppendLine($"Posicion: {posicion}");
             return base.ObtenerInformacion() + informacion.ToString();
         }
     }

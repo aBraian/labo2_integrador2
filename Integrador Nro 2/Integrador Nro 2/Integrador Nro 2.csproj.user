@@ -4,6 +4,9 @@
     <Compile Update="FrmMenuAlta.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FrmMenuBaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FrmMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>

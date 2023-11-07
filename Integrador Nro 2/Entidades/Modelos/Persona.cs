@@ -10,16 +10,16 @@ namespace Entidades.Modelos
         protected string apellido;
         protected string dni;
         protected string celular;
-        protected ETurno turno;
         protected DateTime fechaNacimiento;
+        protected ETurno turno;
 
         protected Persona(string nombre, string apellido, string dni, string celular , DateTime fechaNacimiento, ETurno turno)
         {
-            this.Nombre = nombre;
-            this.Apellido = apellido; 
-            this.Dni = dni;
-            this.Celular = celular;
-            this.FechaNacimiento = fechaNacimiento;
+            Nombre = nombre;
+            Apellido = apellido; 
+            Dni = dni;
+            Celular = celular;
+            FechaNacimiento = fechaNacimiento;
             this.turno = turno;
         }
 
@@ -77,7 +77,7 @@ namespace Entidades.Modelos
             {
                 if (ValidarDni(value))
                 {
-                    this.dni = DarFormatoDni(value);
+                    this.dni = value;
                 }
             }
         }
@@ -239,14 +239,19 @@ namespace Entidades.Modelos
         protected virtual string ObtenerInformacion()
         {
             StringBuilder informacion = new StringBuilder();
-            informacion.AppendLine($"Nombre: {this.nombre}");
-            informacion.AppendLine($"Apellido: {this.apellido}");
-            informacion.AppendLine($"DNI: {this.dni}");
-            informacion.AppendLine($"Celular: {this.celular}");
-            informacion.AppendLine($"Fecha de nacimiento: {this.fechaNacimiento.ToString("dd/MMMM/yyyy")}");
-            informacion.AppendLine($"Edad: {this.Edad}");
-            informacion.AppendLine($"Turno: {this.turno}");
+            informacion.AppendLine($"Nombre: {nombre}");
+            informacion.AppendLine($"Apellido: {apellido}");
+            informacion.AppendLine($"DNI: {DarFormatoDni(dni)}");
+            informacion.AppendLine($"Celular: {celular}");
+            informacion.AppendLine($"Fecha de nacimiento: {fechaNacimiento.ToString("dd/MMMM/yyyy")}");
+            informacion.AppendLine($"Edad: {Edad}");
+            informacion.AppendLine($"Turno: {turno}");
             return informacion.ToString();
+        }
+
+        public override string ToString()
+        {
+            return ObtenerInformacion();
         }
 
         public static bool operator ==(Persona p1, Persona p2)
