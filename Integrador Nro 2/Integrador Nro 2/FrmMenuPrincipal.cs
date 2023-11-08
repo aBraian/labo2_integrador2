@@ -30,6 +30,16 @@ namespace Integrador_Nro_2
             } while (menuBaja.DialogResult == DialogResult.OK);
         }
 
+        private void btnDatosPersonales_Click(object sender, EventArgs e)
+        {
+            FrmMenuModificarDatosPersonales menuDatosPersonales;
+            do
+            {
+                menuDatosPersonales = new FrmMenuModificarDatosPersonales(polideportivo);
+                menuDatosPersonales.ShowDialog();
+            } while (menuDatosPersonales.DialogResult == DialogResult.OK);
+        }
+
         private void FrmMenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("¿Cerrar programa?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
@@ -37,6 +47,5 @@ namespace Integrador_Nro_2
                 e.Cancel = true;
             }
         }
-
     }
 }

@@ -37,9 +37,9 @@
             tlbDarBaja = new TableLayoutPanel();
             pbDarBaja = new PictureBox();
             btnDarBaja = new Button();
-            tlpModificar = new TableLayoutPanel();
-            pbModificar = new PictureBox();
-            btnModificar = new Button();
+            tlpDatosPersonales = new TableLayoutPanel();
+            pbDatosPersonales = new PictureBox();
+            btnDatosPersonales = new Button();
             flpAlta = new FlowLayoutPanel();
             tlpAlta1 = new TableLayoutPanel();
             tlpFechaNacimiento = new TableLayoutPanel();
@@ -60,14 +60,17 @@
             tlpNombre = new TableLayoutPanel();
             lblNombre = new Label();
             txtNombre = new TextBox();
+            tlpDeportes = new TableLayoutPanel();
+            pbDeportes = new PictureBox();
+            btnDeportes = new Button();
             tlpMenuPrincipal.SuspendLayout();
             flpContenedorBotones.SuspendLayout();
             tlpDarAlta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbDarAlta).BeginInit();
             tlbDarBaja.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbDarBaja).BeginInit();
-            tlpModificar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pbModificar).BeginInit();
+            tlpDatosPersonales.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbDatosPersonales).BeginInit();
             tlpAlta1.SuspendLayout();
             tlpFechaNacimiento.SuspendLayout();
             tlpTurno.SuspendLayout();
@@ -75,6 +78,8 @@
             tlpDni.SuspendLayout();
             tlpApellido.SuspendLayout();
             tlpNombre.SuspendLayout();
+            tlpDeportes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbDeportes).BeginInit();
             SuspendLayout();
             // 
             // tlpMenuPrincipal
@@ -98,7 +103,8 @@
             flpContenedorBotones.BorderStyle = BorderStyle.Fixed3D;
             flpContenedorBotones.Controls.Add(tlpDarAlta);
             flpContenedorBotones.Controls.Add(tlbDarBaja);
-            flpContenedorBotones.Controls.Add(tlpModificar);
+            flpContenedorBotones.Controls.Add(tlpDatosPersonales);
+            flpContenedorBotones.Controls.Add(tlpDeportes);
             flpContenedorBotones.Dock = DockStyle.Fill;
             flpContenedorBotones.FlowDirection = FlowDirection.TopDown;
             flpContenedorBotones.Location = new Point(3, 3);
@@ -196,49 +202,50 @@
             btnDarBaja.UseVisualStyleBackColor = true;
             btnDarBaja.Click += btnDarBaja_Click;
             // 
-            // tlpModificar
+            // tlpDatosPersonales
             // 
-            tlpModificar.ColumnCount = 2;
-            tlpModificar.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
-            tlpModificar.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tlpModificar.Controls.Add(pbModificar, 0, 0);
-            tlpModificar.Controls.Add(btnModificar, 1, 0);
-            tlpModificar.Location = new Point(3, 135);
-            tlpModificar.Name = "tlpModificar";
-            tlpModificar.RowCount = 1;
-            tlpModificar.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
-            tlpModificar.Size = new Size(340, 60);
-            tlpModificar.TabIndex = 3;
+            tlpDatosPersonales.ColumnCount = 2;
+            tlpDatosPersonales.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
+            tlpDatosPersonales.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpDatosPersonales.Controls.Add(pbDatosPersonales, 0, 0);
+            tlpDatosPersonales.Controls.Add(btnDatosPersonales, 1, 0);
+            tlpDatosPersonales.Location = new Point(3, 135);
+            tlpDatosPersonales.Name = "tlpDatosPersonales";
+            tlpDatosPersonales.RowCount = 1;
+            tlpDatosPersonales.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
+            tlpDatosPersonales.Size = new Size(340, 60);
+            tlpDatosPersonales.TabIndex = 3;
             // 
-            // pbModificar
+            // pbDatosPersonales
             // 
-            pbModificar.BackColor = Color.Transparent;
-            pbModificar.Dock = DockStyle.Fill;
-            pbModificar.Image = (Image)resources.GetObject("pbModificar.Image");
-            pbModificar.InitialImage = null;
-            pbModificar.Location = new Point(3, 3);
-            pbModificar.Name = "pbModificar";
-            pbModificar.Size = new Size(54, 54);
-            pbModificar.SizeMode = PictureBoxSizeMode.Zoom;
-            pbModificar.TabIndex = 0;
-            pbModificar.TabStop = false;
+            pbDatosPersonales.BackColor = Color.Transparent;
+            pbDatosPersonales.Dock = DockStyle.Fill;
+            pbDatosPersonales.Image = (Image)resources.GetObject("pbDatosPersonales.Image");
+            pbDatosPersonales.InitialImage = null;
+            pbDatosPersonales.Location = new Point(3, 3);
+            pbDatosPersonales.Name = "pbDatosPersonales";
+            pbDatosPersonales.Size = new Size(54, 54);
+            pbDatosPersonales.SizeMode = PictureBoxSizeMode.Zoom;
+            pbDatosPersonales.TabIndex = 0;
+            pbDatosPersonales.TabStop = false;
             // 
-            // btnModificar
+            // btnDatosPersonales
             // 
-            btnModificar.Dock = DockStyle.Fill;
-            btnModificar.FlatAppearance.BorderSize = 0;
-            btnModificar.FlatAppearance.MouseDownBackColor = Color.FromArgb(41, 44, 76);
-            btnModificar.FlatAppearance.MouseOverBackColor = Color.FromArgb(32, 35, 85);
-            btnModificar.FlatStyle = FlatStyle.Flat;
-            btnModificar.Font = new Font("HelveticaNowText Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnModificar.ForeColor = Color.White;
-            btnModificar.Location = new Point(63, 3);
-            btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(274, 54);
-            btnModificar.TabIndex = 1;
-            btnModificar.Text = "Modificar Información";
-            btnModificar.TextAlign = ContentAlignment.MiddleLeft;
-            btnModificar.UseVisualStyleBackColor = true;
+            btnDatosPersonales.Dock = DockStyle.Fill;
+            btnDatosPersonales.FlatAppearance.BorderSize = 0;
+            btnDatosPersonales.FlatAppearance.MouseDownBackColor = Color.FromArgb(41, 44, 76);
+            btnDatosPersonales.FlatAppearance.MouseOverBackColor = Color.FromArgb(32, 35, 85);
+            btnDatosPersonales.FlatStyle = FlatStyle.Flat;
+            btnDatosPersonales.Font = new Font("HelveticaNowText Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDatosPersonales.ForeColor = Color.White;
+            btnDatosPersonales.Location = new Point(63, 3);
+            btnDatosPersonales.Name = "btnDatosPersonales";
+            btnDatosPersonales.Size = new Size(274, 54);
+            btnDatosPersonales.TabIndex = 1;
+            btnDatosPersonales.Text = "Cambiar Datos Personales";
+            btnDatosPersonales.TextAlign = ContentAlignment.MiddleLeft;
+            btnDatosPersonales.UseVisualStyleBackColor = true;
+            btnDatosPersonales.Click += btnDatosPersonales_Click;
             // 
             // flpAlta
             // 
@@ -505,6 +512,50 @@
             txtNombre.Size = new Size(192, 31);
             txtNombre.TabIndex = 1;
             // 
+            // tlpDeportes
+            // 
+            tlpDeportes.ColumnCount = 2;
+            tlpDeportes.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
+            tlpDeportes.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpDeportes.Controls.Add(pbDeportes, 0, 0);
+            tlpDeportes.Controls.Add(btnDeportes, 1, 0);
+            tlpDeportes.Location = new Point(3, 201);
+            tlpDeportes.Name = "tlpDeportes";
+            tlpDeportes.RowCount = 1;
+            tlpDeportes.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
+            tlpDeportes.Size = new Size(340, 60);
+            tlpDeportes.TabIndex = 4;
+            // 
+            // pbDeportes
+            // 
+            pbDeportes.BackColor = Color.Transparent;
+            pbDeportes.Dock = DockStyle.Fill;
+            pbDeportes.Image = (Image)resources.GetObject("pbDeportes.Image");
+            pbDeportes.InitialImage = null;
+            pbDeportes.Location = new Point(3, 3);
+            pbDeportes.Name = "pbDeportes";
+            pbDeportes.Size = new Size(54, 54);
+            pbDeportes.SizeMode = PictureBoxSizeMode.Zoom;
+            pbDeportes.TabIndex = 0;
+            pbDeportes.TabStop = false;
+            // 
+            // btnDeportes
+            // 
+            btnDeportes.Dock = DockStyle.Fill;
+            btnDeportes.FlatAppearance.BorderSize = 0;
+            btnDeportes.FlatAppearance.MouseDownBackColor = Color.FromArgb(41, 44, 76);
+            btnDeportes.FlatAppearance.MouseOverBackColor = Color.FromArgb(32, 35, 85);
+            btnDeportes.FlatStyle = FlatStyle.Flat;
+            btnDeportes.Font = new Font("HelveticaNowText Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDeportes.ForeColor = Color.White;
+            btnDeportes.Location = new Point(63, 3);
+            btnDeportes.Name = "btnDeportes";
+            btnDeportes.Size = new Size(274, 54);
+            btnDeportes.TabIndex = 1;
+            btnDeportes.Text = "Cambiar Datos Deportes";
+            btnDeportes.TextAlign = ContentAlignment.MiddleLeft;
+            btnDeportes.UseVisualStyleBackColor = true;
+            // 
             // FrmMenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -527,8 +578,8 @@
             ((System.ComponentModel.ISupportInitialize)pbDarAlta).EndInit();
             tlbDarBaja.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbDarBaja).EndInit();
-            tlpModificar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pbModificar).EndInit();
+            tlpDatosPersonales.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pbDatosPersonales).EndInit();
             tlpAlta1.ResumeLayout(false);
             tlpFechaNacimiento.ResumeLayout(false);
             tlpFechaNacimiento.PerformLayout();
@@ -542,6 +593,8 @@
             tlpApellido.PerformLayout();
             tlpNombre.ResumeLayout(false);
             tlpNombre.PerformLayout();
+            tlpDeportes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pbDeportes).EndInit();
             ResumeLayout(false);
         }
 
@@ -555,9 +608,9 @@
         private TableLayoutPanel tlbDarBaja;
         private PictureBox pbDarBaja;
         private Button btnDarBaja;
-        private TableLayoutPanel tlpModificar;
-        private PictureBox pbModificar;
-        private Button btnModificar;
+        private TableLayoutPanel tlpDatosPersonales;
+        private PictureBox pbDatosPersonales;
+        private Button btnDatosPersonales;
         private FlowLayoutPanel flpAlta;
         private TableLayoutPanel tlpAlta1;
         private TableLayoutPanel tlpFechaNacimiento;
@@ -578,5 +631,8 @@
         private TableLayoutPanel tlpNombre;
         private Label lblNombre;
         private TextBox txtNombre;
+        private TableLayoutPanel tlpDeportes;
+        private PictureBox pbDeportes;
+        private Button btnDeportes;
     }
 }
