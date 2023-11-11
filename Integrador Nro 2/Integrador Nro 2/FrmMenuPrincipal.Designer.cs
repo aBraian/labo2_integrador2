@@ -349,6 +349,7 @@
             btnListaPersonas.Text = "Ver Lista Personas";
             btnListaPersonas.TextAlign = ContentAlignment.MiddleLeft;
             btnListaPersonas.UseVisualStyleBackColor = true;
+            btnListaPersonas.Click += btnListaPersonas_Click;
             // 
             // pbLogo
             // 
@@ -641,6 +642,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AquaGoal";
             FormClosing += FrmMenuPrincipal_FormClosing;
+            Load += FrmMenuPrincipal_Load;
             tlpMenuPrincipal.ResumeLayout(false);
             flpContenedorBotones.ResumeLayout(false);
             tlpDarAlta.ResumeLayout(false);

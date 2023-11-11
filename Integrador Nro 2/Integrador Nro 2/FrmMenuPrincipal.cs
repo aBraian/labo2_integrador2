@@ -14,10 +14,16 @@ namespace Integrador_Nro_2
             polideportivo = new Polideportivo(CAPACIDAD_FUTBOL, CAPACIDAD_NATACION);
         }
 
+        private void FrmMenuPrincipal_Load(object sender, EventArgs e)
+        {
+            polideportivo.Ordenar();
+        }
+
         private void btnDarAlta_Click(object sender, EventArgs e)
         {
             FrmMenuAlta menuAlta = new FrmMenuAlta(polideportivo);
             menuAlta.ShowDialog();
+            polideportivo.Ordenar();
         }
 
         private void btnDarBaja_Click(object sender, EventArgs e)
@@ -27,6 +33,7 @@ namespace Integrador_Nro_2
             {
                 menuBaja = new FrmMenuBaja(polideportivo);
                 menuBaja.ShowDialog();
+                polideportivo.Ordenar();
             } while (menuBaja.DialogResult == DialogResult.OK);
         }
 
@@ -37,6 +44,7 @@ namespace Integrador_Nro_2
             {
                 menuDatosPersonales = new FrmMenuModificarDatosPersonales(polideportivo);
                 menuDatosPersonales.ShowDialog();
+                polideportivo.Ordenar();
             } while (menuDatosPersonales.DialogResult == DialogResult.OK);
         }
 
@@ -47,7 +55,14 @@ namespace Integrador_Nro_2
             {
                 menuDeportes = new FrmMenuModificarDeportes(polideportivo);
                 menuDeportes.ShowDialog();
+                polideportivo.Ordenar();
             } while (menuDeportes.DialogResult == DialogResult.OK);
+        }
+
+        private void btnListaPersonas_Click(object sender, EventArgs e)
+        {
+            FrmListaPersonas menuListaPersonas = new FrmListaPersonas(polideportivo);
+            menuListaPersonas.ShowDialog();
         }
 
         private void FrmMenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)

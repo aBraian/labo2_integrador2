@@ -129,7 +129,7 @@
             lblMensaje.Name = "lblMensaje";
             lblMensaje.Size = new Size(122, 58);
             lblMensaje.TabIndex = 0;
-            lblMensaje.Text = "Seleccionar\r\npersona";
+            lblMensaje.Text = "Seleccionar\r\nPersona";
             lblMensaje.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // tlpBotones
