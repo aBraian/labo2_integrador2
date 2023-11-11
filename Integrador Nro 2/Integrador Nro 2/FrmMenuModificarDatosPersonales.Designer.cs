@@ -75,7 +75,7 @@
             btnVolver.FlatAppearance.MouseDownBackColor = Color.FromArgb(41, 44, 76);
             btnVolver.FlatAppearance.MouseOverBackColor = Color.FromArgb(32, 35, 85);
             btnVolver.FlatStyle = FlatStyle.Flat;
-            btnVolver.Font = new Font("HelveticaNowText Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnVolver.Font = new Font("HelveticaNowText Light", 10F, FontStyle.Regular, GraphicsUnit.Point);
             btnVolver.ForeColor = Color.White;
             btnVolver.Location = new Point(175, 3);
             btnVolver.Name = "btnVolver";
@@ -107,7 +107,7 @@
             btnModificar.FlatAppearance.MouseDownBackColor = Color.FromArgb(41, 44, 76);
             btnModificar.FlatAppearance.MouseOverBackColor = Color.FromArgb(32, 35, 85);
             btnModificar.FlatStyle = FlatStyle.Flat;
-            btnModificar.Font = new Font("HelveticaNowText Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnModificar.Font = new Font("HelveticaNowText Light", 10F, FontStyle.Regular, GraphicsUnit.Point);
             btnModificar.ForeColor = Color.White;
             btnModificar.Location = new Point(3, 3);
             btnModificar.Name = "btnModificar";
@@ -136,12 +136,12 @@
             dtpFechaNacimiento.CalendarForeColor = Color.FromArgb(55, 55, 57);
             dtpFechaNacimiento.CalendarTitleForeColor = Color.FromArgb(55, 55, 57);
             dtpFechaNacimiento.CustomFormat = "dd/MMM/yyyy";
-            dtpFechaNacimiento.Font = new Font("HelveticaNowText Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dtpFechaNacimiento.Font = new Font("HelveticaNowText Light", 10F, FontStyle.Regular, GraphicsUnit.Point);
             dtpFechaNacimiento.Format = DateTimePickerFormat.Custom;
-            dtpFechaNacimiento.Location = new Point(21, 73);
+            dtpFechaNacimiento.Location = new Point(58, 75);
             dtpFechaNacimiento.Margin = new Padding(4, 3, 4, 3);
             dtpFechaNacimiento.Name = "dtpFechaNacimiento";
-            dtpFechaNacimiento.Size = new Size(299, 31);
+            dtpFechaNacimiento.Size = new Size(225, 27);
             dtpFechaNacimiento.TabIndex = 1;
             // 
             // tlpFechaNacimiento
@@ -175,13 +175,13 @@
             // txtCelular
             // 
             txtCelular.Anchor = AnchorStyles.None;
-            txtCelular.Font = new Font("HelveticaNowText Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtCelular.Font = new Font("HelveticaNowText Light", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txtCelular.ForeColor = Color.FromArgb(55, 55, 57);
-            txtCelular.Location = new Point(20, 73);
+            txtCelular.Location = new Point(57, 75);
             txtCelular.Margin = new Padding(4, 3, 4, 3);
             txtCelular.Name = "txtCelular";
             txtCelular.PlaceholderText = "Ingresar celular";
-            txtCelular.Size = new Size(299, 31);
+            txtCelular.Size = new Size(225, 27);
             txtCelular.TabIndex = 1;
             // 
             // tlpCelular
@@ -215,13 +215,13 @@
             // txtDni
             // 
             txtDni.Anchor = AnchorStyles.None;
-            txtDni.Font = new Font("HelveticaNowText Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtDni.Font = new Font("HelveticaNowText Light", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txtDni.ForeColor = Color.FromArgb(55, 55, 57);
-            txtDni.Location = new Point(20, 73);
+            txtDni.Location = new Point(57, 75);
             txtDni.Margin = new Padding(4, 3, 4, 3);
             txtDni.Name = "txtDni";
             txtDni.PlaceholderText = "Ingresar DNI";
-            txtDni.Size = new Size(299, 31);
+            txtDni.Size = new Size(225, 27);
             txtDni.TabIndex = 1;
             // 
             // cbApellido
@@ -240,13 +240,13 @@
             // txtApellido
             // 
             txtApellido.Anchor = AnchorStyles.None;
-            txtApellido.Font = new Font("HelveticaNowText Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtApellido.Font = new Font("HelveticaNowText Light", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txtApellido.ForeColor = Color.FromArgb(55, 55, 57);
-            txtApellido.Location = new Point(20, 73);
+            txtApellido.Location = new Point(57, 75);
             txtApellido.Margin = new Padding(4, 3, 4, 3);
             txtApellido.Name = "txtApellido";
             txtApellido.PlaceholderText = "Ingresar apellido";
-            txtApellido.Size = new Size(299, 31);
+            txtApellido.Size = new Size(225, 27);
             txtApellido.TabIndex = 1;
             // 
             // tlpApellido
@@ -268,13 +268,13 @@
             // txtNombre
             // 
             txtNombre.Anchor = AnchorStyles.None;
-            txtNombre.Font = new Font("HelveticaNowText Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNombre.Font = new Font("HelveticaNowText Light", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txtNombre.ForeColor = Color.FromArgb(55, 55, 57);
-            txtNombre.Location = new Point(20, 73);
+            txtNombre.Location = new Point(57, 75);
             txtNombre.Margin = new Padding(4, 3, 4, 3);
             txtNombre.Name = "txtNombre";
             txtNombre.PlaceholderText = "Ingresar nombre";
-            txtNombre.Size = new Size(299, 31);
+            txtNombre.Size = new Size(225, 27);
             txtNombre.TabIndex = 1;
             // 
             // cbNombre
@@ -382,7 +382,7 @@
             MinimizeBox = false;
             Name = "FrmMenuModificarDatosPersonales";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Polideportivo UTN";
+            Text = "AquaGoal";
             Load += FrmMenuModificarDatosPersonales_Load;
             ((System.ComponentModel.ISupportInitialize)epModificar).EndInit();
             tlpBotones.ResumeLayout(false);

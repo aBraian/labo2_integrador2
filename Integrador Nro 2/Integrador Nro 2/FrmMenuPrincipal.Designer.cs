@@ -40,6 +40,13 @@
             tlpDatosPersonales = new TableLayoutPanel();
             pbDatosPersonales = new PictureBox();
             btnDatosPersonales = new Button();
+            tlpDeportes = new TableLayoutPanel();
+            pbDeportes = new PictureBox();
+            btnDeportes = new Button();
+            tlpListaPersonas = new TableLayoutPanel();
+            pbListaPersonas = new PictureBox();
+            btnListaPersonas = new Button();
+            pbLogo = new PictureBox();
             flpAlta = new FlowLayoutPanel();
             tlpAlta1 = new TableLayoutPanel();
             tlpFechaNacimiento = new TableLayoutPanel();
@@ -60,9 +67,6 @@
             tlpNombre = new TableLayoutPanel();
             lblNombre = new Label();
             txtNombre = new TextBox();
-            tlpDeportes = new TableLayoutPanel();
-            pbDeportes = new PictureBox();
-            btnDeportes = new Button();
             tlpMenuPrincipal.SuspendLayout();
             flpContenedorBotones.SuspendLayout();
             tlpDarAlta.SuspendLayout();
@@ -71,6 +75,11 @@
             ((System.ComponentModel.ISupportInitialize)pbDarBaja).BeginInit();
             tlpDatosPersonales.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbDatosPersonales).BeginInit();
+            tlpDeportes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbDeportes).BeginInit();
+            tlpListaPersonas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbListaPersonas).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbLogo).BeginInit();
             tlpAlta1.SuspendLayout();
             tlpFechaNacimiento.SuspendLayout();
             tlpTurno.SuspendLayout();
@@ -78,8 +87,6 @@
             tlpDni.SuspendLayout();
             tlpApellido.SuspendLayout();
             tlpNombre.SuspendLayout();
-            tlpDeportes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pbDeportes).BeginInit();
             SuspendLayout();
             // 
             // tlpMenuPrincipal
@@ -89,6 +96,7 @@
             tlpMenuPrincipal.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 350F));
             tlpMenuPrincipal.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tlpMenuPrincipal.Controls.Add(flpContenedorBotones, 0, 0);
+            tlpMenuPrincipal.Controls.Add(pbLogo, 1, 0);
             tlpMenuPrincipal.Dock = DockStyle.Fill;
             tlpMenuPrincipal.Location = new Point(0, 0);
             tlpMenuPrincipal.Name = "tlpMenuPrincipal";
@@ -105,6 +113,7 @@
             flpContenedorBotones.Controls.Add(tlbDarBaja);
             flpContenedorBotones.Controls.Add(tlpDatosPersonales);
             flpContenedorBotones.Controls.Add(tlpDeportes);
+            flpContenedorBotones.Controls.Add(tlpListaPersonas);
             flpContenedorBotones.Dock = DockStyle.Fill;
             flpContenedorBotones.FlowDirection = FlowDirection.TopDown;
             flpContenedorBotones.Location = new Point(3, 3);
@@ -115,15 +124,16 @@
             // tlpDarAlta
             // 
             tlpDarAlta.ColumnCount = 2;
-            tlpDarAlta.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
+            tlpDarAlta.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 50F));
             tlpDarAlta.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tlpDarAlta.Controls.Add(pbDarAlta, 0, 0);
             tlpDarAlta.Controls.Add(btnDarAlta, 1, 0);
+            tlpDarAlta.Font = new Font("HelveticaNowText Light", 10F, FontStyle.Regular, GraphicsUnit.Point);
             tlpDarAlta.Location = new Point(3, 3);
             tlpDarAlta.Name = "tlpDarAlta";
             tlpDarAlta.RowCount = 1;
             tlpDarAlta.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
-            tlpDarAlta.Size = new Size(340, 60);
+            tlpDarAlta.Size = new Size(340, 50);
             tlpDarAlta.TabIndex = 1;
             // 
             // pbDarAlta
@@ -134,7 +144,7 @@
             pbDarAlta.InitialImage = null;
             pbDarAlta.Location = new Point(3, 3);
             pbDarAlta.Name = "pbDarAlta";
-            pbDarAlta.Size = new Size(54, 54);
+            pbDarAlta.Size = new Size(44, 54);
             pbDarAlta.SizeMode = PictureBoxSizeMode.Zoom;
             pbDarAlta.TabIndex = 0;
             pbDarAlta.TabStop = false;
@@ -146,13 +156,13 @@
             btnDarAlta.FlatAppearance.MouseDownBackColor = Color.FromArgb(41, 44, 76);
             btnDarAlta.FlatAppearance.MouseOverBackColor = Color.FromArgb(32, 35, 85);
             btnDarAlta.FlatStyle = FlatStyle.Flat;
-            btnDarAlta.Font = new Font("HelveticaNowText Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDarAlta.Font = new Font("HelveticaNowText Light", 10F, FontStyle.Regular, GraphicsUnit.Point);
             btnDarAlta.ForeColor = Color.White;
-            btnDarAlta.Location = new Point(63, 3);
+            btnDarAlta.Location = new Point(53, 3);
             btnDarAlta.Name = "btnDarAlta";
-            btnDarAlta.Size = new Size(274, 54);
+            btnDarAlta.Size = new Size(284, 54);
             btnDarAlta.TabIndex = 1;
-            btnDarAlta.Text = "Inscribir ";
+            btnDarAlta.Text = "Dar Alta";
             btnDarAlta.TextAlign = ContentAlignment.MiddleLeft;
             btnDarAlta.UseVisualStyleBackColor = true;
             btnDarAlta.Click += btnDarAlta_Click;
@@ -160,15 +170,16 @@
             // tlbDarBaja
             // 
             tlbDarBaja.ColumnCount = 2;
-            tlbDarBaja.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
+            tlbDarBaja.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 50F));
             tlbDarBaja.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tlbDarBaja.Controls.Add(pbDarBaja, 0, 0);
             tlbDarBaja.Controls.Add(btnDarBaja, 1, 0);
-            tlbDarBaja.Location = new Point(3, 69);
+            tlbDarBaja.Font = new Font("HelveticaNowText Light", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            tlbDarBaja.Location = new Point(3, 59);
             tlbDarBaja.Name = "tlbDarBaja";
             tlbDarBaja.RowCount = 1;
             tlbDarBaja.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
-            tlbDarBaja.Size = new Size(340, 60);
+            tlbDarBaja.Size = new Size(340, 50);
             tlbDarBaja.TabIndex = 2;
             // 
             // pbDarBaja
@@ -179,7 +190,7 @@
             pbDarBaja.InitialImage = null;
             pbDarBaja.Location = new Point(3, 3);
             pbDarBaja.Name = "pbDarBaja";
-            pbDarBaja.Size = new Size(54, 54);
+            pbDarBaja.Size = new Size(44, 54);
             pbDarBaja.SizeMode = PictureBoxSizeMode.Zoom;
             pbDarBaja.TabIndex = 0;
             pbDarBaja.TabStop = false;
@@ -191,13 +202,13 @@
             btnDarBaja.FlatAppearance.MouseDownBackColor = Color.FromArgb(41, 44, 76);
             btnDarBaja.FlatAppearance.MouseOverBackColor = Color.FromArgb(32, 35, 85);
             btnDarBaja.FlatStyle = FlatStyle.Flat;
-            btnDarBaja.Font = new Font("HelveticaNowText Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDarBaja.Font = new Font("HelveticaNowText Light", 10F, FontStyle.Regular, GraphicsUnit.Point);
             btnDarBaja.ForeColor = Color.White;
-            btnDarBaja.Location = new Point(63, 3);
+            btnDarBaja.Location = new Point(53, 3);
             btnDarBaja.Name = "btnDarBaja";
-            btnDarBaja.Size = new Size(274, 54);
+            btnDarBaja.Size = new Size(284, 54);
             btnDarBaja.TabIndex = 1;
-            btnDarBaja.Text = "Eliminar ";
+            btnDarBaja.Text = "Dar Baja ";
             btnDarBaja.TextAlign = ContentAlignment.MiddleLeft;
             btnDarBaja.UseVisualStyleBackColor = true;
             btnDarBaja.Click += btnDarBaja_Click;
@@ -205,15 +216,16 @@
             // tlpDatosPersonales
             // 
             tlpDatosPersonales.ColumnCount = 2;
-            tlpDatosPersonales.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
+            tlpDatosPersonales.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 50F));
             tlpDatosPersonales.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tlpDatosPersonales.Controls.Add(pbDatosPersonales, 0, 0);
             tlpDatosPersonales.Controls.Add(btnDatosPersonales, 1, 0);
-            tlpDatosPersonales.Location = new Point(3, 135);
+            tlpDatosPersonales.Font = new Font("HelveticaNowText Light", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            tlpDatosPersonales.Location = new Point(3, 115);
             tlpDatosPersonales.Name = "tlpDatosPersonales";
             tlpDatosPersonales.RowCount = 1;
             tlpDatosPersonales.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
-            tlpDatosPersonales.Size = new Size(340, 60);
+            tlpDatosPersonales.Size = new Size(340, 50);
             tlpDatosPersonales.TabIndex = 3;
             // 
             // pbDatosPersonales
@@ -224,7 +236,7 @@
             pbDatosPersonales.InitialImage = null;
             pbDatosPersonales.Location = new Point(3, 3);
             pbDatosPersonales.Name = "pbDatosPersonales";
-            pbDatosPersonales.Size = new Size(54, 54);
+            pbDatosPersonales.Size = new Size(44, 54);
             pbDatosPersonales.SizeMode = PictureBoxSizeMode.Zoom;
             pbDatosPersonales.TabIndex = 0;
             pbDatosPersonales.TabStop = false;
@@ -236,16 +248,117 @@
             btnDatosPersonales.FlatAppearance.MouseDownBackColor = Color.FromArgb(41, 44, 76);
             btnDatosPersonales.FlatAppearance.MouseOverBackColor = Color.FromArgb(32, 35, 85);
             btnDatosPersonales.FlatStyle = FlatStyle.Flat;
-            btnDatosPersonales.Font = new Font("HelveticaNowText Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDatosPersonales.Font = new Font("HelveticaNowText Light", 10F, FontStyle.Regular, GraphicsUnit.Point);
             btnDatosPersonales.ForeColor = Color.White;
-            btnDatosPersonales.Location = new Point(63, 3);
+            btnDatosPersonales.Location = new Point(53, 3);
             btnDatosPersonales.Name = "btnDatosPersonales";
-            btnDatosPersonales.Size = new Size(274, 54);
+            btnDatosPersonales.Size = new Size(284, 54);
             btnDatosPersonales.TabIndex = 1;
-            btnDatosPersonales.Text = "Cambiar Datos Personales";
+            btnDatosPersonales.Text = "Modificar Datos Personales";
             btnDatosPersonales.TextAlign = ContentAlignment.MiddleLeft;
             btnDatosPersonales.UseVisualStyleBackColor = true;
             btnDatosPersonales.Click += btnDatosPersonales_Click;
+            // 
+            // tlpDeportes
+            // 
+            tlpDeportes.ColumnCount = 2;
+            tlpDeportes.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 50F));
+            tlpDeportes.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpDeportes.Controls.Add(pbDeportes, 0, 0);
+            tlpDeportes.Controls.Add(btnDeportes, 1, 0);
+            tlpDeportes.Font = new Font("HelveticaNowText Light", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            tlpDeportes.Location = new Point(3, 171);
+            tlpDeportes.Name = "tlpDeportes";
+            tlpDeportes.RowCount = 1;
+            tlpDeportes.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
+            tlpDeportes.Size = new Size(340, 50);
+            tlpDeportes.TabIndex = 4;
+            // 
+            // pbDeportes
+            // 
+            pbDeportes.BackColor = Color.Transparent;
+            pbDeportes.Dock = DockStyle.Fill;
+            pbDeportes.Image = (Image)resources.GetObject("pbDeportes.Image");
+            pbDeportes.InitialImage = null;
+            pbDeportes.Location = new Point(3, 3);
+            pbDeportes.Name = "pbDeportes";
+            pbDeportes.Size = new Size(44, 54);
+            pbDeportes.SizeMode = PictureBoxSizeMode.Zoom;
+            pbDeportes.TabIndex = 0;
+            pbDeportes.TabStop = false;
+            // 
+            // btnDeportes
+            // 
+            btnDeportes.Dock = DockStyle.Fill;
+            btnDeportes.FlatAppearance.BorderSize = 0;
+            btnDeportes.FlatAppearance.MouseDownBackColor = Color.FromArgb(41, 44, 76);
+            btnDeportes.FlatAppearance.MouseOverBackColor = Color.FromArgb(32, 35, 85);
+            btnDeportes.FlatStyle = FlatStyle.Flat;
+            btnDeportes.Font = new Font("HelveticaNowText Light", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDeportes.ForeColor = Color.White;
+            btnDeportes.Location = new Point(53, 3);
+            btnDeportes.Name = "btnDeportes";
+            btnDeportes.Size = new Size(284, 54);
+            btnDeportes.TabIndex = 1;
+            btnDeportes.Text = "Modificar Datos Deportes";
+            btnDeportes.TextAlign = ContentAlignment.MiddleLeft;
+            btnDeportes.UseVisualStyleBackColor = true;
+            btnDeportes.Click += btnDeportes_Click;
+            // 
+            // tlpListaPersonas
+            // 
+            tlpListaPersonas.ColumnCount = 2;
+            tlpListaPersonas.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 50F));
+            tlpListaPersonas.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpListaPersonas.Controls.Add(pbListaPersonas, 0, 0);
+            tlpListaPersonas.Controls.Add(btnListaPersonas, 1, 0);
+            tlpListaPersonas.Font = new Font("HelveticaNowText Light", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            tlpListaPersonas.Location = new Point(3, 227);
+            tlpListaPersonas.Name = "tlpListaPersonas";
+            tlpListaPersonas.RowCount = 1;
+            tlpListaPersonas.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
+            tlpListaPersonas.Size = new Size(340, 50);
+            tlpListaPersonas.TabIndex = 5;
+            // 
+            // pbListaPersonas
+            // 
+            pbListaPersonas.BackColor = Color.Transparent;
+            pbListaPersonas.Dock = DockStyle.Fill;
+            pbListaPersonas.Image = (Image)resources.GetObject("pbListaPersonas.Image");
+            pbListaPersonas.InitialImage = null;
+            pbListaPersonas.Location = new Point(3, 3);
+            pbListaPersonas.Name = "pbListaPersonas";
+            pbListaPersonas.Size = new Size(44, 54);
+            pbListaPersonas.SizeMode = PictureBoxSizeMode.Zoom;
+            pbListaPersonas.TabIndex = 0;
+            pbListaPersonas.TabStop = false;
+            // 
+            // btnListaPersonas
+            // 
+            btnListaPersonas.Dock = DockStyle.Fill;
+            btnListaPersonas.FlatAppearance.BorderSize = 0;
+            btnListaPersonas.FlatAppearance.MouseDownBackColor = Color.FromArgb(41, 44, 76);
+            btnListaPersonas.FlatAppearance.MouseOverBackColor = Color.FromArgb(32, 35, 85);
+            btnListaPersonas.FlatStyle = FlatStyle.Flat;
+            btnListaPersonas.Font = new Font("HelveticaNowText Light", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnListaPersonas.ForeColor = Color.White;
+            btnListaPersonas.Location = new Point(53, 3);
+            btnListaPersonas.Name = "btnListaPersonas";
+            btnListaPersonas.Size = new Size(284, 54);
+            btnListaPersonas.TabIndex = 1;
+            btnListaPersonas.Text = "Ver Lista Personas";
+            btnListaPersonas.TextAlign = ContentAlignment.MiddleLeft;
+            btnListaPersonas.UseVisualStyleBackColor = true;
+            // 
+            // pbLogo
+            // 
+            pbLogo.Anchor = AnchorStyles.None;
+            pbLogo.Image = (Image)resources.GetObject("pbLogo.Image");
+            pbLogo.Location = new Point(437, 134);
+            pbLogo.Name = "pbLogo";
+            pbLogo.Size = new Size(500, 500);
+            pbLogo.TabIndex = 1;
+            pbLogo.TabStop = false;
             // 
             // flpAlta
             // 
@@ -512,50 +625,6 @@
             txtNombre.Size = new Size(192, 31);
             txtNombre.TabIndex = 1;
             // 
-            // tlpDeportes
-            // 
-            tlpDeportes.ColumnCount = 2;
-            tlpDeportes.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
-            tlpDeportes.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tlpDeportes.Controls.Add(pbDeportes, 0, 0);
-            tlpDeportes.Controls.Add(btnDeportes, 1, 0);
-            tlpDeportes.Location = new Point(3, 201);
-            tlpDeportes.Name = "tlpDeportes";
-            tlpDeportes.RowCount = 1;
-            tlpDeportes.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
-            tlpDeportes.Size = new Size(340, 60);
-            tlpDeportes.TabIndex = 4;
-            // 
-            // pbDeportes
-            // 
-            pbDeportes.BackColor = Color.Transparent;
-            pbDeportes.Dock = DockStyle.Fill;
-            pbDeportes.Image = (Image)resources.GetObject("pbDeportes.Image");
-            pbDeportes.InitialImage = null;
-            pbDeportes.Location = new Point(3, 3);
-            pbDeportes.Name = "pbDeportes";
-            pbDeportes.Size = new Size(54, 54);
-            pbDeportes.SizeMode = PictureBoxSizeMode.Zoom;
-            pbDeportes.TabIndex = 0;
-            pbDeportes.TabStop = false;
-            // 
-            // btnDeportes
-            // 
-            btnDeportes.Dock = DockStyle.Fill;
-            btnDeportes.FlatAppearance.BorderSize = 0;
-            btnDeportes.FlatAppearance.MouseDownBackColor = Color.FromArgb(41, 44, 76);
-            btnDeportes.FlatAppearance.MouseOverBackColor = Color.FromArgb(32, 35, 85);
-            btnDeportes.FlatStyle = FlatStyle.Flat;
-            btnDeportes.Font = new Font("HelveticaNowText Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnDeportes.ForeColor = Color.White;
-            btnDeportes.Location = new Point(63, 3);
-            btnDeportes.Name = "btnDeportes";
-            btnDeportes.Size = new Size(274, 54);
-            btnDeportes.TabIndex = 1;
-            btnDeportes.Text = "Cambiar Datos Deportes";
-            btnDeportes.TextAlign = ContentAlignment.MiddleLeft;
-            btnDeportes.UseVisualStyleBackColor = true;
-            // 
             // FrmMenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -570,7 +639,7 @@
             MinimizeBox = false;
             Name = "FrmMenuPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Polideportivo UTN";
+            Text = "AquaGoal";
             FormClosing += FrmMenuPrincipal_FormClosing;
             tlpMenuPrincipal.ResumeLayout(false);
             flpContenedorBotones.ResumeLayout(false);
@@ -580,6 +649,11 @@
             ((System.ComponentModel.ISupportInitialize)pbDarBaja).EndInit();
             tlpDatosPersonales.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbDatosPersonales).EndInit();
+            tlpDeportes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pbDeportes).EndInit();
+            tlpListaPersonas.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pbListaPersonas).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbLogo).EndInit();
             tlpAlta1.ResumeLayout(false);
             tlpFechaNacimiento.ResumeLayout(false);
             tlpFechaNacimiento.PerformLayout();
@@ -593,8 +667,6 @@
             tlpApellido.PerformLayout();
             tlpNombre.ResumeLayout(false);
             tlpNombre.PerformLayout();
-            tlpDeportes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pbDeportes).EndInit();
             ResumeLayout(false);
         }
 
@@ -634,5 +706,9 @@
         private TableLayoutPanel tlpDeportes;
         private PictureBox pbDeportes;
         private Button btnDeportes;
+        private TableLayoutPanel tlpListaPersonas;
+        private PictureBox pbListaPersonas;
+        private Button btnListaPersonas;
+        private PictureBox pbLogo;
     }
 }

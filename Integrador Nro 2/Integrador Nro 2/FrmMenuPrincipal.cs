@@ -40,6 +40,16 @@ namespace Integrador_Nro_2
             } while (menuDatosPersonales.DialogResult == DialogResult.OK);
         }
 
+        private void btnDeportes_Click(object sender, EventArgs e)
+        {
+            FrmMenuModificarDeportes menuDeportes;
+            do
+            {
+                menuDeportes = new FrmMenuModificarDeportes(polideportivo);
+                menuDeportes.ShowDialog();
+            } while (menuDeportes.DialogResult == DialogResult.OK);
+        }
+
         private void FrmMenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("¿Cerrar programa?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)

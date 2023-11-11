@@ -8,6 +8,12 @@
         Noche
     }
 
+    public enum EDeporte
+    {
+        Futbol,
+        Natacion
+    }
+
     public enum EPosicion
     {
         Arquero,

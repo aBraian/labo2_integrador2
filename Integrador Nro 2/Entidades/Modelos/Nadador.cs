@@ -6,7 +6,11 @@ namespace Entidades.Modelos
     {
         private ENivel nivel;
 
-        public Nadador(string nombre, string apellido, string dni, string celular, DateTime fechaNacimiento, ETurno turno, ENivel nivel) : base(nombre, apellido, dni, celular, fechaNacimiento, turno)
+        public Nadador(string nombre, string apellido, string dni, string celular, DateTime fechaNacimiento, ETurno turno) : base(nombre, apellido, dni, celular, fechaNacimiento, turno)
+        {
+        }
+
+        public Nadador(string nombre, string apellido, string dni, string celular, DateTime fechaNacimiento, ETurno turno, ENivel nivel) : this(nombre, apellido, dni, celular, fechaNacimiento, turno)
         {
             this.nivel = nivel;
         }
@@ -16,6 +20,10 @@ namespace Entidades.Modelos
             get
             {
                 return this.nivel;
+            }
+            set
+            {
+                nivel = value;
             }
         }
 
@@ -27,12 +35,29 @@ namespace Entidades.Modelos
             }
         }
 
-        public override string Deporte
+        public override EDeporte Deporte
         {
             get
             {
-                return "Natacion";
+                return EDeporte.Natacion;
             }
+        }
+
+        public override Nadador Copia
+        {
+            get
+            {
+                return new Nadador(nombre, apellido, dni, celular, fechaNacimiento, turno, nivel);
+            }
+        }
+
+        public override Persona CambiarDeporte(EDeporte deporte)
+        {
+            if (deporte == EDeporte.Futbol)
+            {
+                return new Futbolista(nombre, apellido, dni, celular, fechaNacimiento, turno);
+            }
+            return this;
         }
 
         protected override string ObtenerInformacion()

@@ -21,6 +21,21 @@ namespace Entidades.Modelos
             this.capacidadNatacion = capacidadNatacion;
         }
 
+        public int this[Persona persona]
+        {
+            get
+            {
+                foreach (Persona item in personas)
+                {
+                    if (persona == item)
+                    {
+                        return personas.IndexOf(persona);
+                    }
+                }
+                throw new PolideportivoException("No se encontro la persona buscada.");
+            }
+        }
+
         public List<Persona> ListaPersonas
         {
             get
@@ -60,44 +75,60 @@ namespace Entidades.Modelos
             return true;
         }
 
+        public bool ValidarTurno(Persona persona)
+        {
+            if (persona.Deporte == EDeporte.Futbol && ValidarCapacidadFutbolPorTurno(persona))
+            {
+                return true;
+            }
+            else if (ValidarCapacidadNatacionPorTurno(persona))
+            {
+                return true;
+            }
+            return false;
+        }
+
         public static Polideportivo operator +(Polideportivo polideportivo, Persona persona)
         {
-            foreach (Persona item in polideportivo.ListaPersonas)
+            if (polideportivo == persona)
             {
-                if (item == persona)
-                {
-                    throw new PolideportivoException("La persona ya se encuentra registrada en el turno ingresado.");
-                }
+                throw new PolideportivoException("La persona ya se encuentra registrada en el turno ingresado.");
             }
-            switch (persona.Deporte)
+            if (polideportivo.ValidarTurno(persona))
             {
-                case "Futbol":
-                    if (polideportivo.ValidarCapacidadFutbolPorTurno(persona))
-                    {
-                        polideportivo.ListaPersonas.Add(persona);
-                    }
-                    break;
-                case "Natacion":
-                    if (polideportivo.ValidarCapacidadNatacionPorTurno(persona))
-                    {
-                        polideportivo.ListaPersonas.Add(persona);
-                    }
-                    break;
+                polideportivo.ListaPersonas.Add(persona);
             }
             return polideportivo;
         }
 
         public static Polideportivo operator -(Polideportivo polideportivo, Persona persona)
         {
-            foreach (Persona p in polideportivo.ListaPersonas)
+            foreach (Persona item in polideportivo.ListaPersonas)
             {
-                if (p == persona)
+                if (item == persona)
                 {
-                    polideportivo.ListaPersonas.Remove(p);
+                    polideportivo.ListaPersonas.Remove(item);
                     break;
                 }
             }
             return polideportivo;
+        }
+
+        public static bool operator ==(Polideportivo polideportivo, Persona persona)
+        {
+            foreach (Persona item in polideportivo.personas)
+            {
+                if (item == persona)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static bool operator !=(Polideportivo polideportivo, Persona persona)
+        {
+            return !(polideportivo == persona);
         }
     }
 }

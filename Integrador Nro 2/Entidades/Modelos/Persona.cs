@@ -118,6 +118,10 @@ namespace Entidades.Modelos
             {
                 return this.turno;
             }
+            set
+            {
+                turno = value;
+            }
         }
 
         public int Edad
@@ -133,7 +137,12 @@ namespace Entidades.Modelos
             get;
         }
 
-        public abstract string Deporte
+        public abstract EDeporte Deporte
+        {
+            get;
+        }
+
+        public abstract Persona Copia
         {
             get;
         }
@@ -235,6 +244,8 @@ namespace Entidades.Modelos
             }
             return edad;
         }
+
+        public abstract Persona CambiarDeporte(EDeporte deporte);
 
         protected virtual string ObtenerInformacion()
         {

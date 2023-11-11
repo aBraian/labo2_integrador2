@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Runtime.CompilerServices;
+using System.Text;
 
 namespace Entidades.Modelos
 {
@@ -6,7 +7,11 @@ namespace Entidades.Modelos
     {
         private EPosicion posicion;
 
-        public Futbolista(string nombre, string apellido, string dni, string celular, DateTime fechaNacimiento, ETurno turno, EPosicion posicion) : base(nombre, apellido, dni, celular, fechaNacimiento, turno)
+        public Futbolista(string nombre, string apellido, string dni, string celular, DateTime fechaNacimiento, ETurno turno) : base(nombre, apellido, dni, celular, fechaNacimiento, turno)
+        {
+        }
+
+        public Futbolista(string nombre, string apellido, string dni, string celular, DateTime fechaNacimiento, ETurno turno, EPosicion posicion) : this(nombre, apellido, dni, celular, fechaNacimiento, turno)
         {
             this.posicion = posicion;
         }
@@ -16,6 +21,10 @@ namespace Entidades.Modelos
             get
             {
                 return this.posicion;
+            }
+            set
+            {
+                posicion = value;
             }
         }
 
@@ -27,12 +36,29 @@ namespace Entidades.Modelos
             }
         }
 
-        public override string Deporte
+        public override EDeporte Deporte
         {
             get
             {
-                return "Futbol";
+                return EDeporte.Futbol;
             }
+        }
+
+        public override Futbolista Copia
+        {
+            get
+            {
+                return new Futbolista(nombre, apellido, dni, celular, fechaNacimiento, turno, posicion);
+            }
+        }
+
+        public override Persona CambiarDeporte(EDeporte deporte)
+        {
+            if (deporte == EDeporte.Natacion)
+            {
+                return new Nadador(nombre, apellido, dni, celular, fechaNacimiento, turno);
+            }
+            return this;
         }
 
         protected override string ObtenerInformacion()

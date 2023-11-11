@@ -19,7 +19,7 @@ namespace Integrador_Nro_2
             cmbTurno.DataSource = Enum.GetValues(typeof(ETurno));
         }
 
-        private void CambiarDeporte()
+        private void ListarDeportes()
         {
             if (rbFutbol.Checked)
             {
@@ -57,17 +57,7 @@ namespace Integrador_Nro_2
         {
             rbFutbol.Checked = true;
             dtpFechaNacimiento.Value = DateTime.Now;
-            CambiarDeporte();
-        }
-
-        private void rbFutbol_Click(object sender, EventArgs e)
-        {
-            CambiarDeporte();
-        }
-
-        private void rbNatacion_Click(object sender, EventArgs e)
-        {
-            CambiarDeporte();
+            ListarDeportes();
         }
 
         private void btnDarAlta_Click(object sender, EventArgs e)
@@ -76,7 +66,7 @@ namespace Integrador_Nro_2
             {
                 epAlta.Clear();
                 polideportivo += DarAltaPersona();
-                MessageBox.Show("Se dio de alta correctamente", "Alta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Alta exitosa.", "Alta", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (NombreException ex)
             {
@@ -104,7 +94,7 @@ namespace Integrador_Nro_2
             }
             catch (Exception)
             {
-                MessageBox.Show("Error inesperado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error inesperado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -114,6 +104,16 @@ namespace Integrador_Nro_2
             {
                 this.Close();
             }
+        }
+
+        private void rbFutbol_Click(object sender, EventArgs e)
+        {
+            ListarDeportes();
+        }
+
+        private void rbNatacion_Click(object sender, EventArgs e)
+        {
+            ListarDeportes();
         }
     }
 }
