@@ -1,4 +1,5 @@
-﻿using Entidades.Excepciones;
+﻿using Entidades.Enumerados;
+using Entidades.Excepciones;
 using Entidades.Modelos;
 
 namespace Integrador_Nro_2

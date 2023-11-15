@@ -1,4 +1,5 @@
-﻿using Entidades.Excepciones;
+﻿using Entidades.Enumerados;
+using Entidades.Excepciones;
 using System.Numerics;
 using System.Text;
 
@@ -244,8 +245,6 @@ namespace Entidades.Modelos
             }
             return edad;
         }
-
-        public abstract Persona CambiarDeporte(EDeporte deporte);
 
         protected virtual string ObtenerInformacion()
         {

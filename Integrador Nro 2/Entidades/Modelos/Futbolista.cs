@@ -1,4 +1,5 @@
-﻿using System.Runtime.CompilerServices;
+﻿using Entidades.Enumerados;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace Entidades.Modelos
@@ -50,15 +51,6 @@ namespace Entidades.Modelos
             {
                 return new Futbolista(nombre, apellido, dni, celular, fechaNacimiento, turno, posicion);
             }
-        }
-
-        public override Persona CambiarDeporte(EDeporte deporte)
-        {
-            if (deporte == EDeporte.Natacion)
-            {
-                return new Nadador(nombre, apellido, dni, celular, fechaNacimiento, turno);
-            }
-            return this;
         }
 
         protected override string ObtenerInformacion()

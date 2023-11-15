@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using Entidades.Enumerados;
+using System.Text;
 
 namespace Entidades.Modelos
 {
@@ -6,11 +7,13 @@ namespace Entidades.Modelos
     {
         private ENivel nivel;
 
-        public Nadador(string nombre, string apellido, string dni, string celular, DateTime fechaNacimiento, ETurno turno) : base(nombre, apellido, dni, celular, fechaNacimiento, turno)
+        public Nadador(string nombre, string apellido, string dni, string celular, DateTime fechaNacimiento, ETurno turno) 
+            : base(nombre, apellido, dni, celular, fechaNacimiento, turno)
         {
         }
 
-        public Nadador(string nombre, string apellido, string dni, string celular, DateTime fechaNacimiento, ETurno turno, ENivel nivel) : this(nombre, apellido, dni, celular, fechaNacimiento, turno)
+        public Nadador(string nombre, string apellido, string dni, string celular, DateTime fechaNacimiento, ETurno turno, 
+            ENivel nivel) : this(nombre, apellido, dni, celular, fechaNacimiento, turno)
         {
             this.nivel = nivel;
         }
@@ -49,15 +52,6 @@ namespace Entidades.Modelos
             {
                 return new Nadador(nombre, apellido, dni, celular, fechaNacimiento, turno, nivel);
             }
-        }
-
-        public override Persona CambiarDeporte(EDeporte deporte)
-        {
-            if (deporte == EDeporte.Futbol)
-            {
-                return new Futbolista(nombre, apellido, dni, celular, fechaNacimiento, turno);
-            }
-            return this;
         }
 
         protected override string ObtenerInformacion()

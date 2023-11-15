@@ -1,10 +1,11 @@
-﻿using Entidades.Excepciones;
+﻿using Entidades.Enumerados;
+using Entidades.Excepciones;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 
 namespace Entidades.Modelos
 {
-    public class Polideportivo
+    public sealed class Polideportivo
     {
         private List<Persona> personas;
         private int capacidadFutbol;
@@ -46,25 +47,7 @@ namespace Entidades.Modelos
 
         public void Ordenar()
         {
-            ListaPersonas.Sort((persona1, persona2) =>
-            {
-                int comparacionApellido = persona1.Apellido.CompareTo(persona2.Apellido);
-                if (comparacionApellido != 0)
-                {
-                    return comparacionApellido;
-                }
-                int comparacionNombre = persona1.Nombre.CompareTo(persona2.Nombre);
-                if (persona1.Nombre.CompareTo(persona2.Nombre) != 0)
-                {
-                    return comparacionNombre;
-                }
-                int comparacionDni = persona1.Dni.CompareTo(persona2.Dni);
-                if (comparacionDni != 0)
-                {
-                    return comparacionDni;
-                }
-                return persona1.Turno.CompareTo(persona2.Turno);
-            });
+            personas = personas.Ordenar();
         }
 
         private int ObtenerCantidadPersonasPorDeporteYTurno(Persona persona)
@@ -84,7 +67,7 @@ namespace Entidades.Modelos
         {
             if (ObtenerCantidadPersonasPorDeporteYTurno(persona) >= this.capacidadFutbol)
             {
-                throw new PolideportivoException("Capacidad de futbol llena.");
+                throw new PolideportivoException($"Capacidad de futbol, turno '{persona.Turno}' llena.");
             }
             return true;
         }
@@ -93,7 +76,7 @@ namespace Entidades.Modelos
         {
             if (ObtenerCantidadPersonasPorDeporteYTurno(persona) >= this.capacidadNatacion)
             {
-                throw new PolideportivoException("Capacidad de natacion llena.");
+                throw new PolideportivoException($"Capacidad de natacion, turno '{persona.Turno}' llena.");
             }
             return true;
         }
@@ -115,7 +98,7 @@ namespace Entidades.Modelos
         {
             if (polideportivo == persona)
             {
-                throw new PolideportivoException("La persona ya se encuentra registrada en el turno ingresado.");
+                throw new PolideportivoException("Persona inscripta en turno seleccionado.");
             }
             if (polideportivo.ValidarTurno(persona))
             {
