@@ -1,5 +1,5 @@
 ﻿using Entidades.Enumerados;
-using System.Runtime.CompilerServices;
+using Entidades.Excepciones;
 using System.Text;
 
 namespace Entidades.Modelos
@@ -7,6 +7,12 @@ namespace Entidades.Modelos
     public class Futbolista : Persona
     {
         private EPosicion posicion;
+        private static int edadMinima;
+
+        static Futbolista()
+        {
+            edadMinima = 9;
+        }
 
         public Futbolista(string nombre, string apellido, string dni, string celular, DateTime fechaNacimiento, ETurno turno) : base(nombre, apellido, dni, celular, fechaNacimiento, turno)
         {
@@ -26,6 +32,21 @@ namespace Entidades.Modelos
             set
             {
                 posicion = value;
+            }
+        }
+
+        public override int Edad
+        {
+            get
+            {
+                return edad;
+            }
+            set
+            {
+                if (ValidarEdad(value))
+                {
+                    this.edad = value;
+                }
             }
         }
 
@@ -51,6 +72,16 @@ namespace Entidades.Modelos
             {
                 return new Futbolista(nombre, apellido, dni, celular, fechaNacimiento, turno, posicion);
             }
+        }
+
+        protected override bool ValidarEdad(int edad)
+        {
+            if (edad < edadMinima)
+            {
+                throw new EdadInvalidaException($"No cumple con edad minima ({edadMinima} años) para realizar " +
+                    $"{Deporte}.");
+            }
+            return true;
         }
 
         protected override string ObtenerInformacion()

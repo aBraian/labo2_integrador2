@@ -66,7 +66,7 @@ namespace Integrador_Nro_2
         private Persona ModificarTurno(Persona persona)
         {
             persona.Turno = (ETurno)cmbTurno.SelectedItem;
-            if (polideportivo.ValidarTurno(persona))
+            if (polideportivo.ValidarCapacidad(persona))
             {
                 return persona;
             }
@@ -97,7 +97,7 @@ namespace Integrador_Nro_2
             {
                 throw new MenuModificarException("La persona ya practica el deporte seleccionado.");
             }
-            if (polideportivo.ValidarTurno(persona))
+            if (polideportivo.ValidarCapacidad(persona))
             {
                 return persona;
             }
@@ -154,6 +154,10 @@ namespace Integrador_Nro_2
                 epModificar.SetError(lblMensaje, ex.Message);
             }
             catch (PolideportivoException ex)
+            {
+                epModificar.SetError(lblMensaje, ex.Message);
+            }
+            catch (EdadInvalidaException ex)
             {
                 epModificar.SetError(lblMensaje, ex.Message);
             }

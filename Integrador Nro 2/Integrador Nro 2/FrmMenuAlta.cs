@@ -69,23 +69,27 @@ namespace Integrador_Nro_2
                 polideportivo += DarAltaPersona();
                 MessageBox.Show("Alta exitosa.", "Alta", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (NombreException ex)
+            catch (NombreInvalidoException ex)
             {
                 epAlta.SetError(lblNombre, ex.Message);
             }
-            catch (ApellidoException ex)
+            catch (ApellidoInvalidoException ex)
             {
                 epAlta.SetError(lblApellido, ex.Message);
             }
-            catch (DniException ex)
+            catch (DniInvalidoException ex)
             {
                 epAlta.SetError(lblDni, ex.Message);
             }
-            catch (CelularException ex)
+            catch (CelularInvalidoException ex)
             {
                 epAlta.SetError(lblCelular, ex.Message);
             }
-            catch (FechaNacimientoException ex)
+            catch (FechaNacimientoInvalidaException ex)
+            {
+                epAlta.SetError(lblFechaNacimiento, ex.Message);
+            }
+            catch (EdadInvalidaException ex)
             {
                 epAlta.SetError(lblFechaNacimiento, ex.Message);
             }

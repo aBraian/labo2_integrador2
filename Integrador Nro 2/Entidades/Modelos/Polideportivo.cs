@@ -1,7 +1,5 @@
 ﻿using Entidades.Enumerados;
 using Entidades.Excepciones;
-using System.Numerics;
-using System.Runtime.CompilerServices;
 
 namespace Entidades.Modelos
 {
@@ -47,10 +45,28 @@ namespace Entidades.Modelos
 
         public void Ordenar()
         {
-            personas = personas.Ordenar();
+            personas.Sort((persona1, persona2) =>
+            {
+                int comparacionApellido = persona1.Apellido.CompareTo(persona2.Apellido);
+                if (comparacionApellido != 0)
+                {
+                    return comparacionApellido;
+                }
+                int comparacionNombre = persona1.Nombre.CompareTo(persona2.Nombre);
+                if (persona1.Nombre.CompareTo(persona2.Nombre) != 0)
+                {
+                    return comparacionNombre;
+                }
+                int comparacionDni = persona1.Dni.CompareTo(persona2.Dni);
+                if (comparacionDni != 0)
+                {
+                    return comparacionDni;
+                }
+                return persona1.Turno.CompareTo(persona2.Turno);
+            });
         }
 
-        private int ObtenerCantidadPersonasPorDeporteYTurno(Persona persona)
+        private int ContarPersonas(Persona persona)
         {
             int cantidad = 0;
             foreach (Persona item in this.personas)
@@ -63,35 +79,18 @@ namespace Entidades.Modelos
             return cantidad;
         }
 
-        private bool ValidarCapacidadFutbolPorTurno(Persona persona)
+        public bool ValidarCapacidad(Persona persona)
         {
-            if (ObtenerCantidadPersonasPorDeporteYTurno(persona) >= this.capacidadFutbol)
-            {
-                throw new PolideportivoException($"Capacidad de futbol, turno '{persona.Turno}' llena.");
-            }
-            return true;
-        }
-
-        private bool ValidarCapacidadNatacionPorTurno(Persona persona)
-        {
-            if (ObtenerCantidadPersonasPorDeporteYTurno(persona) >= this.capacidadNatacion)
-            {
-                throw new PolideportivoException($"Capacidad de natacion, turno '{persona.Turno}' llena.");
-            }
-            return true;
-        }
-
-        public bool ValidarTurno(Persona persona)
-        {
-            if (persona.Deporte == EDeporte.Futbol && ValidarCapacidadFutbolPorTurno(persona))
+            int cantidad = ContarPersonas(persona);
+            if (persona.Deporte == EDeporte.Futbol && cantidad < capacidadFutbol)
             {
                 return true;
             }
-            else if (ValidarCapacidadNatacionPorTurno(persona))
+            else if (cantidad < capacidadNatacion)
             {
                 return true;
             }
-            return false;
+            throw new PolideportivoException($"Deporte {persona.Deporte}, turno '{persona.Turno}' lleno.");
         }
 
         public static Polideportivo operator +(Polideportivo polideportivo, Persona persona)
@@ -100,7 +99,7 @@ namespace Entidades.Modelos
             {
                 throw new PolideportivoException("Persona inscripta en turno seleccionado.");
             }
-            if (polideportivo.ValidarTurno(persona))
+            if (polideportivo.ValidarCapacidad(persona))
             {
                 polideportivo.ListaPersonas.Add(persona);
             }

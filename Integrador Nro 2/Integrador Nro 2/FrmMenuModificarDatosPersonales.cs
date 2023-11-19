@@ -30,50 +30,61 @@ namespace Integrador_Nro_2
             try
             {
                 epModificar.Clear();
-                Persona persona;
                 if (lbPersonas.SelectedItem != null)
                 {
-                    persona = (Persona)lbPersonas.SelectedItem;
+                    Persona persona = (Persona)lbPersonas.SelectedItem;
+                    Persona copia = persona.Copia;
+                    int indice = polideportivo[persona];
                     if (cbNombre.Checked)
                     {
-                        persona.Nombre = txtNombre.Text;
+                        copia.Nombre = txtNombre.Text;
                     }
                     if (cbApellido.Checked)
                     {
-                        persona.Apellido = txtApellido.Text;
+                        copia.Apellido = txtApellido.Text;
                     }
                     if (cbDni.Checked)
                     {
-                        persona.Dni = txtDni.Text;
+                        copia.Dni = txtDni.Text;
                     }
                     if (cbCelular.Checked)
                     {
-                        persona.Celular = txtCelular.Text;
+                        copia.Celular = txtCelular.Text;
                     }
                     if (cbFechaNacimiento.Checked)
                     {
-                        persona.FechaNacimiento = dtpFechaNacimiento.Value;
+                        copia.FechaNacimiento = dtpFechaNacimiento.Value;
+                        copia.Edad = copia.ObtenerEdad(copia.FechaNacimiento);
                     }
-                    this.DialogResult = DialogResult.OK;
+                    if (MessageBox.Show("¿Seguro que quiere modificar los datos?", "Modificar", MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        polideportivo.ListaPersonas[indice] = copia;
+                        this.DialogResult = DialogResult.OK;
+                    }
                 }
             }
-            catch (NombreException ex)
+            catch (NombreInvalidoException ex)
             {
                 epModificar.SetError(cbNombre, ex.Message);
             }
-            catch (ApellidoException ex)
+            catch (ApellidoInvalidoException ex)
             {
                 epModificar.SetError(cbApellido, ex.Message);
             }
-            catch (DniException ex)
+            catch (DniInvalidoException ex)
             {
                 epModificar.SetError(cbDni, ex.Message);
             }
-            catch (CelularException ex)
+            catch (CelularInvalidoException ex)
             {
                 epModificar.SetError(cbCelular, ex.Message);
             }
-            catch (FechaNacimientoException ex)
+            catch (FechaNacimientoInvalidaException ex)
+            {
+                epModificar.SetError(cbFechaNacimiento, ex.Message);
+            }
+            catch (EdadInvalidaException ex)
             {
                 epModificar.SetError(cbFechaNacimiento, ex.Message);
             }
