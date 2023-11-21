@@ -55,7 +55,7 @@
             tlpListaPersonas.Name = "tlpListaPersonas";
             tlpListaPersonas.RowCount = 1;
             tlpListaPersonas.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlpListaPersonas.Size = new Size(1024, 768);
+            tlpListaPersonas.Size = new Size(1332, 853);
             tlpListaPersonas.TabIndex = 0;
             // 
             // tlpContenedorControles
@@ -70,7 +70,7 @@
             tlpContenedorControles.Name = "tlpContenedorControles";
             tlpContenedorControles.RowCount = 1;
             tlpContenedorControles.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tlpContenedorControles.Size = new Size(342, 762);
+            tlpContenedorControles.Size = new Size(342, 847);
             tlpContenedorControles.TabIndex = 5;
             // 
             // tlpControles
@@ -80,7 +80,7 @@
             tlpControles.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tlpControles.Controls.Add(lblMensaje, 0, 0);
             tlpControles.Controls.Add(tlpBotones, 0, 1);
-            tlpControles.Location = new Point(6, 207);
+            tlpControles.Location = new Point(6, 249);
             tlpControles.Margin = new Padding(4, 3, 4, 3);
             tlpControles.Name = "tlpControles";
             tlpControles.RowCount = 2;
@@ -146,14 +146,14 @@
             lbPersonas.ItemHeight = 29;
             lbPersonas.Location = new Point(353, 3);
             lbPersonas.Name = "lbPersonas";
-            lbPersonas.Size = new Size(668, 762);
+            lbPersonas.Size = new Size(976, 847);
             lbPersonas.TabIndex = 4;
             // 
             // FrmListaPersonas
             // 
             AutoScaleDimensions = new SizeF(12F, 29F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1024, 768);
+            ClientSize = new Size(1332, 853);
             Controls.Add(tlpListaPersonas);
             Font = new Font("HelveticaNowText Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ForeColor = Color.White;

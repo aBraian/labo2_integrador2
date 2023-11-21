@@ -1,5 +1,6 @@
 ﻿using Entidades.Modelos;
 using Entidades.Excepciones;
+using Entidades.Extensiones;
 
 namespace Integrador_Nro_2
 {
@@ -34,7 +35,6 @@ namespace Integrador_Nro_2
                 {
                     Persona persona = (Persona)lbPersonas.SelectedItem;
                     Persona copia = persona.Copia;
-                    int indice = polideportivo[persona];
                     if (cbNombre.Checked)
                     {
                         copia.Nombre = txtNombre.Text;
@@ -54,12 +54,12 @@ namespace Integrador_Nro_2
                     if (cbFechaNacimiento.Checked)
                     {
                         copia.FechaNacimiento = dtpFechaNacimiento.Value;
-                        copia.Edad = copia.ObtenerEdad(copia.FechaNacimiento);
+                        copia.Edad = copia.FechaNacimiento.ObtenerEdad();
                     }
                     if (MessageBox.Show("¿Seguro que quiere modificar los datos?", "Modificar", MessageBoxButtons.YesNo,
                         MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        polideportivo.ListaPersonas[indice] = copia;
+                        polideportivo.Reemplazar(persona, copia);
                         this.DialogResult = DialogResult.OK;
                     }
                 }

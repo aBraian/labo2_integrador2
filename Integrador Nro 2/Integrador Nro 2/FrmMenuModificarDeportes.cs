@@ -51,13 +51,13 @@ namespace Integrador_Nro_2
             if (rbFutbol.Checked && persona.Deporte == EDeporte.Futbol)
             {
                 Futbolista futbolista = (Futbolista)persona;
-                futbolista.Posicion = (EPosicion)cmbCategoria.SelectedItem;
+                futbolista.Categoria = (EPosicion)cmbCategoria.SelectedItem;
                 return futbolista;
             }
             else if (rbNatacion.Checked && persona.Deporte == EDeporte.Natacion)
             {
                 Nadador nadador = (Nadador)persona;
-                nadador.Nivel = (ENivel)cmbCategoria.SelectedItem;
+                nadador.Categoria = (ENivel)cmbCategoria.SelectedItem;
                 return nadador;
             }
             throw new MenuModificarException("La persona no practica el deporte seleccionado.");
@@ -120,7 +120,6 @@ namespace Integrador_Nro_2
                     epModificar.Clear();
                     Persona persona = (Persona)lbPersonas.SelectedItem;
                     Persona copia = persona.Copia;
-                    int indice = polideportivo[persona];
                     if (rbCambiarCategoria.Checked)
                     {
                         copia = ModificarCategoria(copia);
@@ -140,7 +139,7 @@ namespace Integrador_Nro_2
                     if (MessageBox.Show("¿Seguro que quiere modificar los datos?", "Modificar", MessageBoxButtons.YesNo,
                         MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        polideportivo.ListaPersonas[indice] = copia;
+                        polideportivo.Reemplazar(persona, copia);
                         this.DialogResult = DialogResult.OK;
                     }
                 }

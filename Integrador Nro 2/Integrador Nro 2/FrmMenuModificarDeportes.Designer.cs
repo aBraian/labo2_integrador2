@@ -50,6 +50,7 @@
             tlpSeleccionTurno = new TableLayoutPanel();
             cmbTurno = new ComboBox();
             lblTurno = new Label();
+            tlpMensaje = new TableLayoutPanel();
             lblMensaje = new Label();
             tlpBotones = new TableLayoutPanel();
             btnModificar = new Button();
@@ -65,6 +66,7 @@
             tlpSeleccionarDeporte.SuspendLayout();
             tlpSeleccionCategoria.SuspendLayout();
             tlpSeleccionTurno.SuspendLayout();
+            tlpMensaje.SuspendLayout();
             tlpBotones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)epModificar).BeginInit();
             SuspendLayout();
@@ -83,7 +85,7 @@
             tlpMenuModificarDeportes.RowCount = 1;
             tlpMenuModificarDeportes.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tlpMenuModificarDeportes.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tlpMenuModificarDeportes.Size = new Size(1024, 768);
+            tlpMenuModificarDeportes.Size = new Size(1332, 853);
             tlpMenuModificarDeportes.TabIndex = 3;
             // 
             // lbPersonas
@@ -98,7 +100,7 @@
             lbPersonas.ItemHeight = 29;
             lbPersonas.Location = new Point(353, 3);
             lbPersonas.Name = "lbPersonas";
-            lbPersonas.Size = new Size(668, 762);
+            lbPersonas.Size = new Size(976, 847);
             lbPersonas.TabIndex = 2;
             // 
             // flpContenedorControles
@@ -109,13 +111,13 @@
             flpContenedorControles.Controls.Add(tlpSeleccionDeporte);
             flpContenedorControles.Controls.Add(tlpSeleccionCategoria);
             flpContenedorControles.Controls.Add(tlpSeleccionTurno);
-            flpContenedorControles.Controls.Add(lblMensaje);
+            flpContenedorControles.Controls.Add(tlpMensaje);
             flpContenedorControles.Controls.Add(tlpBotones);
             flpContenedorControles.Dock = DockStyle.Fill;
             flpContenedorControles.FlowDirection = FlowDirection.TopDown;
             flpContenedorControles.Location = new Point(3, 3);
             flpContenedorControles.Name = "flpContenedorControles";
-            flpContenedorControles.Size = new Size(344, 762);
+            flpContenedorControles.Size = new Size(344, 847);
             flpContenedorControles.TabIndex = 0;
             // 
             // tlpCambios
@@ -354,17 +356,29 @@
             lblTurno.TabIndex = 0;
             lblTurno.Text = "Seleccionar Turno";
             // 
+            // tlpMensaje
+            // 
+            tlpMensaje.ColumnCount = 1;
+            tlpMensaje.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tlpMensaje.Controls.Add(lblMensaje, 0, 0);
+            tlpMensaje.Location = new Point(3, 577);
+            tlpMensaje.Name = "tlpMensaje";
+            tlpMensaje.RowCount = 1;
+            tlpMensaje.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tlpMensaje.Size = new Size(340, 179);
+            tlpMensaje.TabIndex = 25;
+            // 
             // lblMensaje
             // 
             lblMensaje.Anchor = AnchorStyles.None;
             lblMensaje.AutoSize = true;
-            lblMensaje.Font = new Font("HelveticaNowText Light", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblMensaje.Font = new Font("HelveticaNowText Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lblMensaje.ForeColor = Color.White;
-            lblMensaje.Location = new Point(71, 574);
+            lblMensaje.Location = new Point(52, 31);
             lblMensaje.Name = "lblMensaje";
-            lblMensaje.Size = new Size(203, 100);
+            lblMensaje.Size = new Size(235, 116);
             lblMensaje.TabIndex = 23;
-            lblMensaje.Text = "*Se tendra en cuenta la\r\ncapacidad disponible\r\nen el turno y/o deporte\r\nseleccionado.";
+            lblMensaje.Text = "*Se tendra en cuenta la\r\ncapacidad disponible\r\nen el deporte y/o turno\r\nseleccionado.";
             lblMensaje.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // tlpBotones
@@ -374,7 +388,7 @@
             tlpBotones.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tlpBotones.Controls.Add(btnModificar, 0, 0);
             tlpBotones.Controls.Add(btnVolver, 1, 0);
-            tlpBotones.Location = new Point(3, 677);
+            tlpBotones.Location = new Point(3, 762);
             tlpBotones.Name = "tlpBotones";
             tlpBotones.RowCount = 1;
             tlpBotones.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
@@ -424,7 +438,7 @@
             // 
             AutoScaleDimensions = new SizeF(12F, 29F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1024, 768);
+            ClientSize = new Size(1332, 853);
             Controls.Add(tlpMenuModificarDeportes);
             Font = new Font("HelveticaNowText Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -438,7 +452,6 @@
             Load += FrmMenuModificarDeportes_Load;
             tlpMenuModificarDeportes.ResumeLayout(false);
             flpContenedorControles.ResumeLayout(false);
-            flpContenedorControles.PerformLayout();
             tlpCambios.ResumeLayout(false);
             gpSeleccionarCambio.ResumeLayout(false);
             tlpSeleccionarCambios.ResumeLayout(false);
@@ -451,6 +464,8 @@
             tlpSeleccionCategoria.PerformLayout();
             tlpSeleccionTurno.ResumeLayout(false);
             tlpSeleccionTurno.PerformLayout();
+            tlpMensaje.ResumeLayout(false);
+            tlpMensaje.PerformLayout();
             tlpBotones.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)epModificar).EndInit();
             ResumeLayout(false);
@@ -485,5 +500,6 @@
         private Button btnVolver;
         private Button btnModificar;
         private Label lblMensaje;
+        private TableLayoutPanel tlpMensaje;
     }
 }

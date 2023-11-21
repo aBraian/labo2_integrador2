@@ -98,7 +98,7 @@
             tlpMenuAlta.Name = "tlpMenuAlta";
             tlpMenuAlta.RowCount = 1;
             tlpMenuAlta.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlpMenuAlta.Size = new Size(1024, 768);
+            tlpMenuAlta.Size = new Size(1332, 853);
             tlpMenuAlta.TabIndex = 0;
             // 
             // flpDatosPersonales
@@ -115,7 +115,7 @@
             flpDatosPersonales.FlowDirection = FlowDirection.TopDown;
             flpDatosPersonales.Location = new Point(3, 3);
             flpDatosPersonales.Name = "flpDatosPersonales";
-            flpDatosPersonales.Size = new Size(344, 762);
+            flpDatosPersonales.Size = new Size(344, 847);
             flpDatosPersonales.TabIndex = 0;
             // 
             // tlpNombre
@@ -129,14 +129,14 @@
             tlpNombre.RowCount = 2;
             tlpNombre.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tlpNombre.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tlpNombre.Size = new Size(340, 100);
+            tlpNombre.Size = new Size(340, 125);
             tlpNombre.TabIndex = 0;
             // 
             // lblNombre
             // 
             lblNombre.Anchor = AnchorStyles.None;
             lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(126, 10);
+            lblNombre.Location = new Point(126, 16);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(87, 29);
             lblNombre.TabIndex = 0;
@@ -146,7 +146,7 @@
             // 
             txtNombre.Anchor = AnchorStyles.None;
             txtNombre.Font = new Font("HelveticaNowText Light", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txtNombre.Location = new Point(57, 61);
+            txtNombre.Location = new Point(57, 80);
             txtNombre.Name = "txtNombre";
             txtNombre.PlaceholderText = "Ingresar nombre";
             txtNombre.Size = new Size(225, 27);
@@ -158,19 +158,19 @@
             tlpApellido.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tlpApellido.Controls.Add(txtApellido, 0, 1);
             tlpApellido.Controls.Add(lblApellido, 0, 0);
-            tlpApellido.Location = new Point(3, 109);
+            tlpApellido.Location = new Point(3, 134);
             tlpApellido.Name = "tlpApellido";
             tlpApellido.RowCount = 2;
             tlpApellido.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tlpApellido.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tlpApellido.Size = new Size(340, 100);
+            tlpApellido.Size = new Size(340, 125);
             tlpApellido.TabIndex = 1;
             // 
             // txtApellido
             // 
             txtApellido.Anchor = AnchorStyles.None;
             txtApellido.Font = new Font("HelveticaNowText Light", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txtApellido.Location = new Point(57, 61);
+            txtApellido.Location = new Point(57, 80);
             txtApellido.Name = "txtApellido";
             txtApellido.PlaceholderText = "Ingresar apellido";
             txtApellido.Size = new Size(225, 27);
@@ -180,7 +180,7 @@
             // 
             lblApellido.Anchor = AnchorStyles.None;
             lblApellido.AutoSize = true;
-            lblApellido.Location = new Point(125, 10);
+            lblApellido.Location = new Point(125, 16);
             lblApellido.Name = "lblApellido";
             lblApellido.Size = new Size(89, 29);
             lblApellido.TabIndex = 1;
@@ -192,19 +192,19 @@
             tlpDni.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tlpDni.Controls.Add(txtDni, 0, 1);
             tlpDni.Controls.Add(lblDni, 0, 0);
-            tlpDni.Location = new Point(3, 215);
+            tlpDni.Location = new Point(3, 265);
             tlpDni.Name = "tlpDni";
             tlpDni.RowCount = 2;
             tlpDni.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tlpDni.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tlpDni.Size = new Size(340, 100);
+            tlpDni.Size = new Size(340, 125);
             tlpDni.TabIndex = 2;
             // 
             // txtDni
             // 
             txtDni.Anchor = AnchorStyles.None;
             txtDni.Font = new Font("HelveticaNowText Light", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txtDni.Location = new Point(57, 61);
+            txtDni.Location = new Point(57, 80);
             txtDni.Name = "txtDni";
             txtDni.PlaceholderText = "Ingresar DNI";
             txtDni.Size = new Size(225, 27);
@@ -214,7 +214,7 @@
             // 
             lblDni.Anchor = AnchorStyles.None;
             lblDni.AutoSize = true;
-            lblDni.Location = new Point(146, 10);
+            lblDni.Location = new Point(146, 16);
             lblDni.Name = "lblDni";
             lblDni.Size = new Size(47, 29);
             lblDni.TabIndex = 1;
@@ -226,19 +226,19 @@
             tlpCelular.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tlpCelular.Controls.Add(txtCelular, 0, 1);
             tlpCelular.Controls.Add(lblCelular, 0, 0);
-            tlpCelular.Location = new Point(3, 321);
+            tlpCelular.Location = new Point(3, 396);
             tlpCelular.Name = "tlpCelular";
             tlpCelular.RowCount = 2;
             tlpCelular.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tlpCelular.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tlpCelular.Size = new Size(340, 100);
+            tlpCelular.Size = new Size(340, 125);
             tlpCelular.TabIndex = 3;
             // 
             // txtCelular
             // 
             txtCelular.Anchor = AnchorStyles.None;
             txtCelular.Font = new Font("HelveticaNowText Light", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txtCelular.Location = new Point(57, 61);
+            txtCelular.Location = new Point(57, 80);
             txtCelular.Name = "txtCelular";
             txtCelular.PlaceholderText = "Ingresar celular";
             txtCelular.Size = new Size(225, 27);
@@ -248,7 +248,7 @@
             // 
             lblCelular.Anchor = AnchorStyles.None;
             lblCelular.AutoSize = true;
-            lblCelular.Location = new Point(130, 10);
+            lblCelular.Location = new Point(130, 16);
             lblCelular.Name = "lblCelular";
             lblCelular.Size = new Size(79, 29);
             lblCelular.TabIndex = 1;
@@ -260,19 +260,19 @@
             tlpFechaNacimiento.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tlpFechaNacimiento.Controls.Add(lblFechaNacimiento, 0, 0);
             tlpFechaNacimiento.Controls.Add(dtpFechaNacimiento, 0, 1);
-            tlpFechaNacimiento.Location = new Point(3, 427);
+            tlpFechaNacimiento.Location = new Point(3, 527);
             tlpFechaNacimiento.Name = "tlpFechaNacimiento";
             tlpFechaNacimiento.RowCount = 2;
             tlpFechaNacimiento.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tlpFechaNacimiento.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tlpFechaNacimiento.Size = new Size(340, 100);
+            tlpFechaNacimiento.Size = new Size(340, 125);
             tlpFechaNacimiento.TabIndex = 4;
             // 
             // lblFechaNacimiento
             // 
             lblFechaNacimiento.Anchor = AnchorStyles.None;
             lblFechaNacimiento.AutoSize = true;
-            lblFechaNacimiento.Location = new Point(65, 10);
+            lblFechaNacimiento.Location = new Point(65, 16);
             lblFechaNacimiento.Name = "lblFechaNacimiento";
             lblFechaNacimiento.Size = new Size(210, 29);
             lblFechaNacimiento.TabIndex = 1;
@@ -284,7 +284,7 @@
             dtpFechaNacimiento.CustomFormat = "dd/MMM/yyyy";
             dtpFechaNacimiento.Font = new Font("HelveticaNowText Light", 10F, FontStyle.Regular, GraphicsUnit.Point);
             dtpFechaNacimiento.Format = DateTimePickerFormat.Custom;
-            dtpFechaNacimiento.Location = new Point(57, 61);
+            dtpFechaNacimiento.Location = new Point(57, 80);
             dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             dtpFechaNacimiento.Size = new Size(225, 27);
             dtpFechaNacimiento.TabIndex = 2;
@@ -296,11 +296,11 @@
             tlpBotones.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tlpBotones.Controls.Add(btnVolver, 0, 0);
             tlpBotones.Controls.Add(btnDarAlta, 0, 0);
-            tlpBotones.Location = new Point(3, 533);
+            tlpBotones.Location = new Point(3, 658);
             tlpBotones.Name = "tlpBotones";
             tlpBotones.RowCount = 1;
             tlpBotones.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tlpBotones.Size = new Size(340, 222);
+            tlpBotones.Size = new Size(340, 182);
             tlpBotones.TabIndex = 5;
             // 
             // btnVolver
@@ -316,7 +316,7 @@
             btnVolver.Location = new Point(174, 3);
             btnVolver.Margin = new Padding(4, 3, 4, 3);
             btnVolver.Name = "btnVolver";
-            btnVolver.Size = new Size(162, 216);
+            btnVolver.Size = new Size(162, 176);
             btnVolver.TabIndex = 4;
             btnVolver.Text = "Volver";
             btnVolver.UseVisualStyleBackColor = false;
@@ -335,7 +335,7 @@
             btnDarAlta.Location = new Point(4, 3);
             btnDarAlta.Margin = new Padding(4, 3, 4, 3);
             btnDarAlta.Name = "btnDarAlta";
-            btnDarAlta.Size = new Size(162, 216);
+            btnDarAlta.Size = new Size(162, 176);
             btnDarAlta.TabIndex = 3;
             btnDarAlta.Text = "Dar Alta";
             btnDarAlta.UseVisualStyleBackColor = false;
@@ -343,12 +343,12 @@
             // 
             // flpDatosDeporte
             // 
+            flpDatosDeporte.Anchor = AnchorStyles.None;
             flpDatosDeporte.Controls.Add(tlpSeleccionDeporte);
             flpDatosDeporte.Controls.Add(tlpCategoria);
             flpDatosDeporte.Controls.Add(tlpTurno);
-            flpDatosDeporte.Dock = DockStyle.Fill;
             flpDatosDeporte.FlowDirection = FlowDirection.TopDown;
-            flpDatosDeporte.Location = new Point(353, 3);
+            flpDatosDeporte.Location = new Point(507, 45);
             flpDatosDeporte.Name = "flpDatosDeporte";
             flpDatosDeporte.Size = new Size(668, 762);
             flpDatosDeporte.TabIndex = 1;
@@ -495,7 +495,7 @@
             AutoScaleDimensions = new SizeF(12F, 29F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1024, 768);
+            ClientSize = new Size(1332, 853);
             Controls.Add(tlpMenuAlta);
             Font = new Font("HelveticaNowText Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ForeColor = Color.White;

@@ -102,7 +102,7 @@
             tlpMenuPrincipal.Name = "tlpMenuPrincipal";
             tlpMenuPrincipal.RowCount = 1;
             tlpMenuPrincipal.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlpMenuPrincipal.Size = new Size(1024, 768);
+            tlpMenuPrincipal.Size = new Size(1332, 853);
             tlpMenuPrincipal.TabIndex = 0;
             // 
             // flpContenedorBotones
@@ -118,7 +118,7 @@
             flpContenedorBotones.FlowDirection = FlowDirection.TopDown;
             flpContenedorBotones.Location = new Point(3, 3);
             flpContenedorBotones.Name = "flpContenedorBotones";
-            flpContenedorBotones.Size = new Size(344, 762);
+            flpContenedorBotones.Size = new Size(344, 847);
             flpContenedorBotones.TabIndex = 0;
             // 
             // tlpDarAlta
@@ -355,7 +355,7 @@
             // 
             pbLogo.Anchor = AnchorStyles.None;
             pbLogo.Image = (Image)resources.GetObject("pbLogo.Image");
-            pbLogo.Location = new Point(437, 134);
+            pbLogo.Location = new Point(591, 176);
             pbLogo.Name = "pbLogo";
             pbLogo.Size = new Size(500, 500);
             pbLogo.TabIndex = 1;
@@ -630,13 +630,12 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1024, 768);
+            ClientSize = new Size(1332, 853);
             Controls.Add(tlpMenuPrincipal);
             Font = new Font("HelveticaNowText Light", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4);
-            MaximizeBox = false;
             MinimizeBox = false;
             Name = "FrmMenuPrincipal";
             StartPosition = FormStartPosition.CenterScreen;

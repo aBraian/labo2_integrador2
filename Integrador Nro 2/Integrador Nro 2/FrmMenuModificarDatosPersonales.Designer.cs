@@ -317,7 +317,7 @@
             lbPersonas.ItemHeight = 29;
             lbPersonas.Location = new Point(353, 3);
             lbPersonas.Name = "lbPersonas";
-            lbPersonas.Size = new Size(668, 762);
+            lbPersonas.Size = new Size(976, 847);
             lbPersonas.TabIndex = 2;
             // 
             // flpContenedorBotones
@@ -334,7 +334,7 @@
             flpContenedorBotones.FlowDirection = FlowDirection.TopDown;
             flpContenedorBotones.Location = new Point(3, 3);
             flpContenedorBotones.Name = "flpContenedorBotones";
-            flpContenedorBotones.Size = new Size(344, 762);
+            flpContenedorBotones.Size = new Size(344, 847);
             flpContenedorBotones.TabIndex = 0;
             // 
             // tlpDni
@@ -365,14 +365,14 @@
             tlpMenuModificarDatosPersonales.Name = "tlpMenuModificarDatosPersonales";
             tlpMenuModificarDatosPersonales.RowCount = 1;
             tlpMenuModificarDatosPersonales.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlpMenuModificarDatosPersonales.Size = new Size(1024, 768);
+            tlpMenuModificarDatosPersonales.Size = new Size(1332, 853);
             tlpMenuModificarDatosPersonales.TabIndex = 2;
             // 
             // FrmMenuModificarDatosPersonales
             // 
             AutoScaleDimensions = new SizeF(12F, 29F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1024, 768);
+            ClientSize = new Size(1332, 853);
             Controls.Add(tlpMenuModificarDatosPersonales);
             Font = new Font("HelveticaNowText Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.FixedSingle;

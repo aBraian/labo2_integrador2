@@ -59,7 +59,7 @@
             tlpMenuBaja.Name = "tlpMenuBaja";
             tlpMenuBaja.RowCount = 1;
             tlpMenuBaja.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlpMenuBaja.Size = new Size(1024, 768);
+            tlpMenuBaja.Size = new Size(1332, 853);
             tlpMenuBaja.TabIndex = 1;
             // 
             // lbPersonas
@@ -75,7 +75,7 @@
             lbPersonas.Location = new Point(354, 3);
             lbPersonas.Margin = new Padding(4, 3, 4, 3);
             lbPersonas.Name = "lbPersonas";
-            lbPersonas.Size = new Size(666, 762);
+            lbPersonas.Size = new Size(974, 847);
             lbPersonas.TabIndex = 1;
             // 
             // pnlContenedorControles
@@ -87,7 +87,7 @@
             pnlContenedorControles.Location = new Point(4, 3);
             pnlContenedorControles.Margin = new Padding(4, 3, 4, 3);
             pnlContenedorControles.Name = "pnlContenedorControles";
-            pnlContenedorControles.Size = new Size(342, 762);
+            pnlContenedorControles.Size = new Size(342, 847);
             pnlContenedorControles.TabIndex = 2;
             // 
             // tlpContenedorControles
@@ -101,7 +101,7 @@
             tlpContenedorControles.Name = "tlpContenedorControles";
             tlpContenedorControles.RowCount = 1;
             tlpContenedorControles.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tlpContenedorControles.Size = new Size(338, 758);
+            tlpContenedorControles.Size = new Size(338, 843);
             tlpContenedorControles.TabIndex = 0;
             // 
             // tlpControles
@@ -111,7 +111,7 @@
             tlpControles.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tlpControles.Controls.Add(lblMensaje, 0, 0);
             tlpControles.Controls.Add(tlpBotones, 0, 1);
-            tlpControles.Location = new Point(4, 205);
+            tlpControles.Location = new Point(4, 247);
             tlpControles.Margin = new Padding(4, 3, 4, 3);
             tlpControles.Name = "tlpControles";
             tlpControles.RowCount = 2;
@@ -189,7 +189,7 @@
             // 
             AutoScaleDimensions = new SizeF(12F, 29F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1024, 768);
+            ClientSize = new Size(1332, 853);
             Controls.Add(tlpMenuBaja);
             Font = new Font("HelveticaNowText Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ForeColor = Color.White;
