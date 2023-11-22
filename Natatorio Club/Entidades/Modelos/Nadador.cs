@@ -19,12 +19,25 @@ namespace Entidades.Modelos
         private static int edadMinima;
         private static DateTime minimoFechaNacimiento;
 
+        /// <summary>
+        /// Inicializa la clase Nadador con la edad mínima requerida y la fecha de nacimiento mínima permitida.
+        /// </summary>
         static Nadador()
         {
             edadMinima = 4;
             minimoFechaNacimiento = new DateTime(1950, 1, 1);
         }
 
+        /// <summary>
+        /// Inicializa una nueva instancia de la clase Nadador con los datos proporcionados.
+        /// </summary>
+        /// <param name="nombre">Nombre del nadador.</param>
+        /// <param name="apellido">Apellido del nadador.</param>
+        /// <param name="dni">DNI del nadador.</param>
+        /// <param name="telefono">Número de teléfono del nadador.</param>
+        /// <param name="fechaNacimiento">Fecha de nacimiento del nadador.</param>
+        /// <param name="turno">Turno en el que se inscribe el nadador.</param>
+        /// <param name="nivel">Nivel de experiencia del nadador.</param>
         public Nadador(string nombre, string apellido, string dni, string telefono, DateTime fechaNacimiento, 
             ETurno turno, ENivel nivel)
         {
@@ -38,6 +51,9 @@ namespace Entidades.Modelos
             this.nivel = nivel;
         }
 
+        /// <summary>
+        /// Obtiene o establece el nombre de la persona.
+        /// </summary>
         public string Nombre
         {
             get => nombre;
@@ -57,6 +73,9 @@ namespace Entidades.Modelos
             }
         }
 
+        /// <summary>
+        /// Obtiene o establece el apellido de la persona.
+        /// </summary>
         public string Apellido
         {
             get => apellido;
@@ -76,6 +95,9 @@ namespace Entidades.Modelos
             }
         }
 
+        /// <summary>
+        /// Obtiene o establece el número de DNI de la persona.
+        /// </summary>
         public string Dni
         {
             get => dni;
@@ -95,6 +117,9 @@ namespace Entidades.Modelos
             }
         }
 
+        /// <summary>
+        /// Obtiene o establece el número de teléfono de la persona.
+        /// </summary>
         public string Telefono
         {
             get => telefono;
@@ -118,6 +143,9 @@ namespace Entidades.Modelos
             }
         }
 
+        /// <summary>
+        /// Obtiene o establece la fecha de nacimiento de la persona.
+        /// </summary>
         public DateTime FechaNacimiento
         {
             get => fechaNacimiento;
@@ -136,10 +164,20 @@ namespace Entidades.Modelos
             }
         }
 
+        /// <summary>
+        /// Obtiene o establece el turno en el que se inscribe la persona.
+        /// </summary>
         public ETurno Turno { get => turno; set => turno = value; }
 
+        /// <summary>
+        /// Obtiene o establece el nivel de experiencia de la persona.
+        /// </summary>
         public ENivel Nivel { get => nivel; set => nivel = value; }
 
+        /// <summary>
+        /// Obtiene o establece la edad del nadador. 
+        /// Se ignora en la serialización JSON.
+        /// </summary>
         [System.Text.Json.Serialization.JsonIgnore]
         public int Edad
         {
@@ -158,18 +196,35 @@ namespace Entidades.Modelos
             }
         }
 
+        /// <summary>
+        /// Obtiene el deporte al que pertenece el nadador.
+        /// Se ignora en la serialización JSON.
+        /// </summary>
         [System.Text.Json.Serialization.JsonIgnore]
         public EDeporte Deporte { get => EDeporte.Natacion; }
 
+        /// <summary>
+        /// Obtiene la información del nadador. 
+        /// Se ignora en la serialización JSON.
+        /// </summary>
         [System.Text.Json.Serialization.JsonIgnore]
         public string Informacion { get => ObtenerInformacion(); }
 
+        /// <summary>
+        /// Obtiene una copia del nadador.
+        /// Se ignora en la serialización JSON.
+        /// </summary>
         [System.Text.Json.Serialization.JsonIgnore]
         public Nadador Copia
         {
             get => new Nadador(nombre, apellido, dni, telefono, fechaNacimiento, turno, nivel);
         }
 
+        /// <summary>
+        /// Formatea el DNI con puntos cada tres dígitos.
+        /// </summary>
+        /// <param name="dni">Número de DNI a formatear.</param>
+        /// <returns>Número de DNI formateado.</returns>
         private string DarFormatoDni(string dni)
         {
             int contador = 0;
@@ -186,6 +241,12 @@ namespace Entidades.Modelos
             return dniFormateado;
         }
 
+        /// <summary>
+        /// Valida el formato del número de teléfono y verifica el prefijo.
+        /// </summary>
+        /// <param name="telefono">Número de teléfono a validar.</param>
+        /// <returns>True si el formato y prefijo son válidos; de lo contrario, false.</returns>
+        /// <exception cref="PrefijoInvalidoException">Lanzada si el prefijo es inválido.</exception>
         private bool ValidarTelefono(string telefono)
         {
             if (telefono[0] != '1' || (telefono[1] != '1' && telefono[1] != '5'))
@@ -195,6 +256,11 @@ namespace Entidades.Modelos
             return telefono.ValidarEnteroPositivo(10);
         }
 
+        /// <summary>
+        /// Obtiene la información completa del nadador incluyendo nombre, apellido, DNI, teléfono, 
+        /// fecha de nacimiento, edad, turno, deporte y nivel.
+        /// </summary>
+        /// <returns>Información completa del nadador.</returns>
         private string ObtenerInformacion()
         {
             StringBuilder informacion = new StringBuilder();
@@ -227,11 +293,23 @@ namespace Entidades.Modelos
             return HashCode.Combine(dni, turno);
         }
 
+        /// <summary>
+        /// Compara dos nadadores para determinar si son iguales, basándose en el DNI y el turno.
+        /// </summary>
+        /// <param name="x">Primer nadador a comparar.</param>
+        /// <param name="y">Segundo nadador a comparar.</param>
+        /// <returns>True si los nadadores son iguales; de lo contrario, false.</returns>
         public static bool operator ==(Nadador x, Nadador y)
         {
             return x.dni == y.dni && x.turno == y.turno;
         }
 
+        /// <summary>
+        /// Compara dos nadadores para determinar si son diferentes, basándose en el DNI y el turno.
+        /// </summary>
+        /// <param name="x">Primer nadador a comparar.</param>
+        /// <param name="y">Segundo nadador a comparar.</param>
+        /// <returns>True si los nadadores son diferentes; de lo contrario, false.</returns>
         public static bool operator !=(Nadador x, Nadador y)
         {
             return !(x == y);
