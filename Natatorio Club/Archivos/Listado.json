@@ -1,0 +1,29 @@
+[
+  {
+    "Nombre": "Braian Nicolas",
+    "Apellido": "Acosta Florentin",
+    "Dni": "42594753",
+    "Telefono": "1160317215",
+    "FechaNacimiento": "2000-10-21T15:34:23",
+    "Turno": 1,
+    "Nivel": 1
+  },
+  {
+    "Nombre": "Alexis",
+    "Apellido": "Mac Allister",
+    "Dni": "12345678",
+    "Telefono": "1512345678",
+    "FechaNacimiento": "1998-12-24T17:13:35",
+    "Turno": 2,
+    "Nivel": 1
+  },
+  {
+    "Nombre": "Leandro",
+    "Apellido": "Paredes",
+    "Dni": "87654321",
+    "Telefono": "1587654321",
+    "FechaNacimiento": "1994-06-29T17:31:28",
+    "Turno": 3,
+    "Nivel": 2
+  }
+]
