@@ -3,10 +3,23 @@
     "Nombre": "Braian Nicolas",
     "Apellido": "Acosta Florentin",
     "Dni": "42594753",
-    "Telefono": "1160317215",
+    "Telefono": "1170458495",
     "FechaNacimiento": "2000-10-21T15:34:23",
     "Turno": 1,
-    "Nivel": 1
+    "Turno_Nombre": "Mediodia",
+    "Nivel": 2,
+    "Nivel_Nombre": "Avanzado"
+  },
+  {
+    "Nombre": "Diego",
+    "Apellido": "Forlan",
+    "Dni": "42218764",
+    "Telefono": "1543218765",
+    "FechaNacimiento": "1979-05-19T16:22:16",
+    "Turno": 3,
+    "Turno_Nombre": "Noche",
+    "Nivel": 1,
+    "Nivel_Nombre": "Intermedio"
   },
   {
     "Nombre": "Alexis",
@@ -14,16 +27,53 @@
     "Dni": "12345678",
     "Telefono": "1512345678",
     "FechaNacimiento": "1998-12-24T17:13:35",
+    "Turno": 1,
+    "Turno_Nombre": "Mediodia",
+    "Nivel": 1,
+    "Nivel_Nombre": "Intermedio"
+  },
+  {
+    "Nombre": "Lionel",
+    "Apellido": "Messi",
+    "Dni": "88239833",
+    "Telefono": "1188239833",
+    "FechaNacimiento": "1987-06-24T17:09:31",
+    "Turno": 0,
+    "Turno_Nombre": "Manana",
+    "Nivel": 2,
+    "Nivel_Nombre": "Avanzado"
+  },
+  {
+    "Nombre": "Martin",
+    "Apellido": "Palermo",
+    "Dni": "31377464",
+    "Telefono": "1531377464",
+    "FechaNacimiento": "1973-11-07T16:33:01",
     "Turno": 2,
-    "Nivel": 1
+    "Turno_Nombre": "Tarde",
+    "Nivel": 2,
+    "Nivel_Nombre": "Avanzado"
   },
   {
     "Nombre": "Leandro",
     "Apellido": "Paredes",
-    "Dni": "87654321",
+    "Dni": "70458495",
     "Telefono": "1587654321",
     "FechaNacimiento": "1994-06-29T17:31:28",
-    "Turno": 3,
-    "Nivel": 2
+    "Turno": 1,
+    "Turno_Nombre": "Mediodia",
+    "Nivel": 2,
+    "Nivel_Nombre": "Avanzado"
+  },
+  {
+    "Nombre": "Luis",
+    "Apellido": "Suarez",
+    "Dni": "78638923",
+    "Telefono": "1578638923",
+    "FechaNacimiento": "1987-01-24T17:26:06",
+    "Turno": 0,
+    "Turno_Nombre": "Manana",
+    "Nivel": 2,
+    "Nivel_Nombre": "Avanzado"
   }
 ]

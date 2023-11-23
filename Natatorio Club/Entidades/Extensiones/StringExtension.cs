@@ -41,9 +41,9 @@ namespace Entidades.Extensiones
 
         public static bool ValidarEnteroPositivo(this string numero)
         {
-            if (string.IsNullOrEmpty(numero))
+            if (string.IsNullOrWhiteSpace(numero))
             {
-                throw new NumeroInvalidoException("Campo vacio o nulo.");
+                throw new NumeroInvalidoException("Campo vacio, nulo o contiene solo espacios en blanco.");
             }
             if (!int.TryParse(numero, out int aux))
             {

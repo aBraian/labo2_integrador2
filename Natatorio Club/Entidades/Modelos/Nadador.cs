@@ -132,11 +132,11 @@ namespace Entidades.Modelos
                         telefono = value;
                     }
                 }
-                catch (NumeroInvalidoException ex)
+                catch (PrefijoInvalidoException ex)
                 {
                     throw new TelefonoInvalidoException(ex.Message);
                 }
-                catch (PrefijoInvalidoException ex)
+                catch (NumeroInvalidoException ex)
                 {
                     throw new TelefonoInvalidoException(ex.Message);
                 }
@@ -170,9 +170,29 @@ namespace Entidades.Modelos
         public ETurno Turno { get => turno; set => turno = value; }
 
         /// <summary>
+        /// Obtiene la representación en cadena del turno en el que se inscribe la persona.
+        /// Esta propiedad se utiliza principalmente para la serialización a JSON,
+        /// proporcionando el nombre del turno.
+        /// </summary>
+        public string Turno_Nombre
+        {
+            get => turno.ToString();
+        }
+
+        /// <summary>
         /// Obtiene o establece el nivel de experiencia de la persona.
         /// </summary>
         public ENivel Nivel { get => nivel; set => nivel = value; }
+
+        /// <summary>
+        /// Obtiene la representación en cadena del nivel en el deporte de la persona.
+        /// Esta propiedad se utiliza principalmente para la serialización a JSON,
+        /// proporcionando el nombre del nivel.
+        /// </summary>
+        public string Nivel_Nombre
+        {
+            get => nivel.ToString();
+        }
 
         /// <summary>
         /// Obtiene o establece la edad del nadador. 
@@ -253,7 +273,11 @@ namespace Entidades.Modelos
             {
                 throw new PrefijoInvalidoException("Prefijo invalido, ingresar 11 o 15.");
             }
-            return telefono.ValidarEnteroPositivo(10);
+            if (telefono.ValidarEnteroPositivo(10))
+            {
+                return true;
+            }
+            return false;
         }
 
         /// <summary>

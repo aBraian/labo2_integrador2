@@ -10,6 +10,10 @@ namespace Entidades.Serializacion
         private static string rutaArchivo;
         private static JsonSerializerOptions? configuracionJson;
 
+        /// <summary>
+        /// Inicializa las rutas de los archivos y directorios necesarios, 
+        /// y realiza operaciones de creación y formateo.
+        /// </summary>
         static Archivos()
         {
             rutaEjecutable = AppDomain.CurrentDomain.BaseDirectory;

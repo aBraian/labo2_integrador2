@@ -69,7 +69,7 @@ namespace Entidades.Modelos
         /// </summary>
         public void Ordenar()
         {
-            listaNadadores.Sort((x, y) =>
+            listaNadadores.Sort((Comparison<Nadador>)((x, y) =>
             {
                 int comparacionApellido = x.Apellido.CompareTo(y.Apellido);
                 if (comparacionApellido != 0)
@@ -86,8 +86,8 @@ namespace Entidades.Modelos
                 {
                     return comparacionDni;
                 }
-                return x.Turno.CompareTo(y.Turno);
-            });
+                return (int)x.Turno.CompareTo((object)y.Turno);
+            }));
         }
 
         /// <summary>

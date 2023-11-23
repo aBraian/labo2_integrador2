@@ -14,7 +14,7 @@
 
     public enum ETurno
     {
-        Mañana,
+        Manana,
         Mediodia,
         Tarde,
         Noche
